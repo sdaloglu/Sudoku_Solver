@@ -47,9 +47,42 @@ and converts it to a 9x9 numpy array in the form of:
 Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
 """
 
+#Load Modules:
+import numpy as np
 
-def board_to_array():
+def board_to_array(board):
     
+    """
+    !@brief Sudoku solving algorithm using backtracking
+    
+    Parameters:
+    -----------
+    @param board: string
+        Sudoku to be solved in string format
+    
+    Returns:
+    --------
+    
+    @return sudoku_array: 9x9 numpy array
+        Explain parameter
+        
+    """
+    data_array = np.array([])
+    numbers = np.array(['0','1','2','3','4','5','6','7','8','9'])
+    inside_array = np.array([])
+
+    for value in board:
+
+        if value in numbers:
+            inside_array = np.append(inside_array,value)
+        
+            if len(inside_array) == 9:
+            
+                data_array = np.append(data_array,inside_array)
+                inside_array = np.array([])
+    
+    
+    sudoku_array = np.reshape(data_array,(9,9))
     
     
     return sudoku_array
@@ -57,6 +90,6 @@ def board_to_array():
     
     
     
-def array_to_board():
-    
+def array_to_board(sudoku_array):
+    sudoku_board = sudoku_array
     return sudoku_board

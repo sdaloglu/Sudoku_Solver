@@ -1,4 +1,4 @@
-    """
+"""
     This code solves a sudoku puzzle using backtracking algorithm.
     
     Explain how it works step by step
@@ -10,7 +10,7 @@
     
     
     Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
-    """
+"""
 
 
 #Load Modules:
@@ -19,25 +19,29 @@ import sys
 from Sudoku import backtracking as bt
 from Sudoku import board as bd
 
-bt.check_validity
+#bt.check_validity
 
-bt.find_empty
+#bt.find_empty
 
-bd.array_to_board
-bd.board_to_array
+#bd.array_to_board
+
 
 
 #Extracting the input and the output file from the command line
 input_file = sys.argv[1]
-output_file = sys.argv[2]
+f = open(input_file, "r")
+data = f.read()   #Read the text file into a string
 
 
+#output_file = sys.argv[2]
+#f.close()
 
 
 #Reading the input txt file and converting it to a 9x9 numpy array
+sudoku_array = bd.board_to_array(data)
 
 
-
+print(sudoku_array)
 
 
 #Sudoku solving algorithms
