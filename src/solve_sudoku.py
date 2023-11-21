@@ -24,22 +24,19 @@ from Sudoku import board as bd
 
 # Extracting the input and the output file from the command line
 input_file = sys.argv[1]
-
+output_file = sys.argv[2]
 
 # Trapping files that can not be opened
 
 try:
     f = open(input_file, "r")
 except IOError:
-    print("File could not be opened")
+    print("Input file could not be opened")
 else:
     print("Input file opened successfully")
 
     # Read the text file into a string
     data = f.read()
-
-
-# output_file = sys.argv[2]
 
 
 # Reading the input txt file and converting it to a 9x9 numpy array
@@ -70,5 +67,17 @@ def solve_sudoku(sudoku_array):
 
 f.close()
 
-print(solve_sudoku(sudoku_array))
+# Outputting the solved sudoku on the terminal
+solve_sudoku(sudoku_array)
 print(sudoku_array)
+
+# Converting the solution numpy array into a .txt file
+board = bd.array_to_board(sudoku_array)
+
+try:
+    output = open(output_file, "w")
+except IOError:
+    print("Output file could not be opened")
+else:
+    output.write(board)
+    output.close()

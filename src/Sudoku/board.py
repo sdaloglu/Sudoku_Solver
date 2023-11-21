@@ -55,7 +55,7 @@ Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
 
 def board_to_array(board):
     """
-    !@brief Sudoku solving algorithm using backtracking
+    !@brief Converts .txt file of a sudoku board to 9x9 numpy array
 
     Parameters:
     -----------
@@ -91,5 +91,51 @@ def board_to_array(board):
 
 
 def array_to_board(sudoku_array):
-    sudoku_board = sudoku_array
-    return sudoku_board
+    """
+    !@brief Converts 9x9 numpy array to .txt file of a sudoku board
+
+    Parameters:
+    -----------
+    @param sudoku_array: 9x9 numpy array
+        Sudoku board represented as a 9x9 numpy array
+
+    Returns:
+    --------
+
+    @return sudoku board: .txt file of a sudoku board
+        Sudoku board represented as a .txt file such as:
+        000|007|000
+        000|009|504
+        000|050|169
+        ---+---+---
+        080|000|305
+        075|000|290
+        406|000|080
+        ---+---+---
+        762|080|000
+        103|900|000
+        000|600|000
+
+    """
+
+    # Flatten out the input array into a one dimensional array
+    sudoku_array = np.reshape(sudoku_array, (1, 81))[0]
+
+    # Convert the array into a list of strings
+    sudoku_array = [str(i) for i in sudoku_array]
+
+    for i in range(3, 109, 4):
+        sudoku_array = np.insert(sudoku_array, i, "|")
+
+    for i in range(12, 109, 13):
+        sudoku_array = np.insert(sudoku_array, i, "\n")
+
+    for i in range(39, 109, 40):
+        sudoku_array = np.insert(sudoku_array, i, "\n\n")
+
+    board = "".join(sudoku_array)
+
+    inline = "---+---+---"
+    board = board[:39] + inline + board[39:79] + inline + board[79:]
+
+    return board

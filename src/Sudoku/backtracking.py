@@ -63,10 +63,10 @@ def check_validity(sudoku, guess, position):
     x, y = position[0], position[1]
 
     # Caclutaing the coordinates of the box in which the guess is located
-    x = (x // 3) * 3
-    y = (y // 3) * 3
-    box_y_range = [y, y + 1, y + 2]
-    box_x_range = [x, x + 1, x + 2]
+    x_box = (x // 3) * 3
+    y_box = (y // 3) * 3
+    box_y_range = [y_box, y_box + 1, y_box + 2]
+    box_x_range = [x_box, x_box + 1, x_box + 2]
 
     for i in box_x_range:
         for j in box_y_range:
@@ -82,7 +82,7 @@ def check_validity(sudoku, guess, position):
     # Checking the validity of the guess in the row:
 
     for j in range(len(sudoku)):
-        if sudoku[x, j] == guess and i != y:
+        if sudoku[x, j] == guess and j != y:
             return False
 
     # If the guess is valid then return True
