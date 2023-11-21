@@ -1,7 +1,12 @@
-"""!@file board.py
-@brief Module containing functions for building a visual board in .txt format form numpy array or vise verca.
+# Load Modules:
+import numpy as np
 
-@details This module contains functions for building a visual board in .txt format form numpy array or vise verca.
+"""!@file board.py
+@brief Module containing functions for building a visual board
+in .txt format form numpy array or vise verca.
+
+@details This module contains functions for building a visual board
+in .txt format form numpy array or vise verca.
 @author Created by S.M. Daloglu on 20/11/2023
 """
 
@@ -12,12 +17,12 @@ This Module contains functions .... to create ...
 Contains:
 ----------------------------------------
     board_to_array
-        What the function does 
+        What the function does
     array_to_board
         What the function does
 ----------------------------------------
-        
-        
+
+
 All functions take x arguments:
 ----------------------------------------
     arg1
@@ -47,49 +52,44 @@ and converts it to a 9x9 numpy array in the form of:
 Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
 """
 
-#Load Modules:
-import numpy as np
 
 def board_to_array(board):
-    
     """
     !@brief Sudoku solving algorithm using backtracking
-    
+
     Parameters:
     -----------
     @param board: string
         Sudoku to be solved in string format
-    
+
     Returns:
     --------
-    
+
     @return sudoku_array: 9x9 numpy array
         Explain parameter
-        
+
     """
     data_array = np.array([])
-    numbers = np.array(['0','1','2','3','4','5','6','7','8','9'])
+    numbers = np.array(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
     inside_array = np.array([])
 
     for value in board:
-
         if value in numbers:
-            inside_array = np.append(inside_array,value)
-        
+            inside_array = np.append(inside_array, value)
+
             if len(inside_array) == 9:
-            
-                data_array = np.append(data_array,inside_array)
+                data_array = np.append(data_array, inside_array)
                 inside_array = np.array([])
-    
-    
-    sudoku_array = np.reshape(data_array,(9,9))
-    
-    
+
+    # Converting elements in the array from string to int
+    data_array = [eval(i) for i in data_array]
+
+    # Reshaping the array into a 9x9 numpy array
+    sudoku_array = np.reshape(data_array, (9, 9))
+
     return sudoku_array
-    
-    
-    
-    
+
+
 def array_to_board(sudoku_array):
     sudoku_board = sudoku_array
     return sudoku_board

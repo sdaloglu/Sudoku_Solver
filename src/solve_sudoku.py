@@ -40,22 +40,35 @@ else:
 
 
 # output_file = sys.argv[2]
-# f.close()
 
 
 # Reading the input txt file and converting it to a 9x9 numpy array
 sudoku_array = bd.board_to_array(data)
 
 
-print(sudoku_array)
+def solve_sudoku(sudoku_array):
+    if bt.find_empty(sudoku_array) is None:
+        return True
 
-while bt.find_empty(sudoku_array) is not None:
-    empty_box = bt.find_empty(sudoku_array)
-    for guess in range(0, 10):
+    else:
+        empty_box = bt.find_empty(sudoku_array)
+
+    for guess in range(1, 10):
         valid = bt.check_validity(sudoku_array, guess, empty_box)
         if valid:
             sudoku_array[empty_box[0], empty_box[1]] = guess
-            break
+
+            # Recursive call to solve_sudoku function
+            if solve_sudoku(sudoku_array):
+                return True
+
+            # Sequence of guesses is not valid, revert back
+            sudoku_array[empty_box[0], empty_box[1]] = 0
+
+    return False
 
 
+f.close()
+
+print(solve_sudoku(sudoku_array))
 print(sudoku_array)
