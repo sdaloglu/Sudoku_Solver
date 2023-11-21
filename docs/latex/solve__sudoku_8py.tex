@@ -2,18 +2,28 @@
 \hypertarget{solve__sudoku_8py}{}\label{solve__sudoku_8py}\index{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/solve\_sudoku.py@{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/solve\_sudoku.py}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
-\item 
+\item
 namespace \mbox{\hyperlink{namespacesolve__sudoku}{solve\+\_\+sudoku}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This code solves a sudoku puzzle using backtracking algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{namespacesolve__sudoku_a9f6ff5e4ea5ac7374fda16f7de9f706b}{solve\+\_\+sudoku.\+sudoku\+\_\+backtraking}} (sudoku)
-\begin{DoxyCompactList}\small\item\em ! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku.\+solve\+\_\+sudoku}} (\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
-\item 
+\item
 \mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{solve\+\_\+sudoku.\+input\+\_\+file}} = sys.\+argv\mbox{[}1\mbox{]}
-\item 
+\item
 \mbox{\hyperlink{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}{solve\+\_\+sudoku.\+output\+\_\+file}} = sys.\+argv\mbox{[}2\mbox{]}
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}{solve\+\_\+sudoku.\+f}} = open(\mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}}, "{}r"{})
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{solve\+\_\+sudoku.\+data}} = f.\+read()
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{solve\+\_\+sudoku.\+sudoku\+\_\+array}} = bd.\+board\+\_\+to\+\_\+array(\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}})
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_a451685229c9b66d6d124e863853c8fee}{solve\+\_\+sudoku.\+board}} = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}{solve\+\_\+sudoku.\+output}} = open(\mbox{\hyperlink{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}{output\+\_\+file}}, "{}w"{})
 \end{DoxyCompactItemize}

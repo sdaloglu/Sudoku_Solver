@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sudoku_5fbacktraking_0',['sudoku_backtraking',['../namespacesolve__sudoku.html#a9f6ff5e4ea5ac7374fda16f7de9f706b',1,'solve_sudoku']]]
+  ['array_5fto_5fboard_0',['array_to_board',['../namespace_sudoku_1_1board.html#aa76e151a6fd420fd07c8b4a58539b51f',1,'Sudoku::board']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output_5ffile_0',['output_file',['../namespacesolve__sudoku.html#a8b061eedb7e4de57663c9248faf93297',1,'solve_sudoku']]]
+  ['data_0',['data',['../namespacesolve__sudoku.html#a922aa896641778d6e331807728558231',1,'solve_sudoku']]]
 ];

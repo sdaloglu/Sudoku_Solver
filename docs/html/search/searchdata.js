@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "ioprs",
+  0: "abcdfioprs",
   1: "s",
-  2: "s",
-  3: "s",
-  4: "io"
+  2: "bs",
+  3: "abcfs",
+  4: "bdfios"
 };
 
 var indexSectionNames =
@@ -24,4 +24,3 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables"
 };
-

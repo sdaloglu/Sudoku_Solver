@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['returns_3a_0',['Returns:',['../namespacesolve__sudoku.html#autotoc_md1',1,'']]]
+  ['data_0',['data',['../namespacesolve__sudoku.html#a922aa896641778d6e331807728558231',1,'solve_sudoku']]]
 ];
