@@ -1,4 +1,4 @@
-from src.Sudoku import backtracking as bt
+from src.sudoku import backtracking as bt
 import numpy as np
 
 

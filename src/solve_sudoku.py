@@ -18,8 +18,8 @@
 
 # Load Modules:
 import sys
-from Sudoku import backtracking as bt
-from Sudoku import board as bd
+from sudoku import backtracking as bt
+from sudoku import board as bd
 
 
 # Extracting the input and the output file from the command line
