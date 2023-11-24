@@ -62,7 +62,7 @@ def check_validity(sudoku, guess, position):
     # Extracting the coordinates of the empty box containing the guees
     x, y = position[0], position[1]
 
-    # Caclutaing the coordinates of the box in which the guess is located
+    # Calculating the coordinates of the box in which the guess is located
     x_box = (x // 3) * 3
     y_box = (y // 3) * 3
     box_y_range = [y_box, y_box + 1, y_box + 2]
