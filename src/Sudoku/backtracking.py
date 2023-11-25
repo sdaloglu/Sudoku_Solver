@@ -45,7 +45,7 @@ def check_validity(sudoku, guess, position):
         Guess to be checked for validity
 
     @param position: tuple
-        Tuple containing the coordinates of the empty box used for guessing
+        Tuple containing the coordinates of the empty cell used for guessing
 
 
     Returns:
@@ -57,12 +57,12 @@ def check_validity(sudoku, guess, position):
 
     """
 
-    # Checking the validty of the guess in the box:
+    # Checking the validty of the guess in the cell:
 
-    # Extracting the coordinates of the empty box containing the guees
+    # Extracting the coordinates of the empty cell containing the guess
     x, y = position[0], position[1]
 
-    # Calculating the coordinates of the box in which the guess is located
+    # Calculating the coordinates of the 3x3 box in which the guess is located
     x_box = (x // 3) * 3
     y_box = (y // 3) * 3
     box_y_range = [y_box, y_box + 1, y_box + 2]
@@ -91,27 +91,27 @@ def check_validity(sudoku, guess, position):
 
 def find_empty(sudoku):
     """
-    !@brief Finds the next empty box in the sudoku
+    !@brief Finds the next empty cell in the sudoku
 
     Parameters:
     -----------
     @param sudoku: 9x1 numpy array
-        Sudoku to be checked for empty boxes
+        Sudoku to be checked for empty cells
 
 
     Returns:
     --------
 
-    @return empty_box: tuple
-        Tuple containing the coordinates of the empty boxes
+    @return empty_cell: tuple
+        Tuple containing the coordinates of the empty cells
     """
 
-    # Looping over the sudoku to find the next empty box
+    # Looping over the sudoku to find the next empty cell
     for i in range(len(sudoku)):
         for j in range(len(sudoku[i])):
             if sudoku[i, j] == 0:
-                empty_box = (i, j)
-                return empty_box
+                empty_cell = (i, j)
+                return empty_cell
 
-    # If no empty box is found, return None
+    # If no empty cell is found, return None
     return None
