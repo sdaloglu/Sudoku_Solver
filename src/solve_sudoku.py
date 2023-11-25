@@ -4,7 +4,7 @@
     Explain how it works step by step
 
     Backtracking algorithm is a brute force method which tries
-    all possible values for the empty boxed until it finds the correct one.
+    all possible values for the empty cells until it finds the correct one.
 
     The algorithm reverts back to the previous configuration of the sudoku
     table as soon as a contradiction is found with the current configuration.
@@ -48,19 +48,19 @@ def solve_sudoku(sudoku_array):
         return True
 
     else:
-        empty_box = bt.find_empty(sudoku_array)
+        empty_cell = bt.find_empty(sudoku_array)
 
     for guess in range(1, 10):
-        valid = bt.check_validity(sudoku_array, guess, empty_box)
+        valid = bt.check_validity(sudoku_array, guess, empty_cell)
         if valid:
-            sudoku_array[empty_box[0], empty_box[1]] = guess
+            sudoku_array[empty_cell[0], empty_cell[1]] = guess
 
             # Recursive call to solve_sudoku function
             if solve_sudoku(sudoku_array):
                 return True
 
             # Sequence of guesses is not valid, revert back
-            sudoku_array[empty_box[0], empty_box[1]] = 0
+            sudoku_array[empty_cell[0], empty_cell[1]] = 0
 
     return False
 
