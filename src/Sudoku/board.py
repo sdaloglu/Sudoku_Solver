@@ -69,25 +69,43 @@ def board_to_array(board):
         Explain parameter
 
     """
+    # Creating the outer array of the 2D sudoku which will store 9 row (inner)arrays
     data_array = np.array([])
-    numbers = np.array(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
-    inside_array = np.array([])
+
+    # Creating the inner array of the 2D sudoku which will store 9 numbers
+    row_array = np.array([])
+
+    # Creating an array of sudoku numbers to search for in the board
+    sudoku_numbers = np.array(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
 
     for value in board:
-        if value in numbers:
-            inside_array = np.append(inside_array, value)
+        if value in sudoku_numbers:
+            row_array = np.append(row_array, value)
 
-            if len(inside_array) == 9:
-                data_array = np.append(data_array, inside_array)
-                inside_array = np.array([])
+            if len(row_array) == 9:
+                data_array = np.append(data_array, row_array)
 
-    # Converting elements in the array from string to int
+                # Emptying the row_array for the next row
+                row_array = np.array([])
+
+    # Converting elements in the array from string to integer
     data_array = [eval(i) for i in data_array]
 
-    # Reshaping the array into a 9x9 numpy array
-    sudoku_array = np.reshape(data_array, (9, 9))
-
-    return sudoku_array
+    try:
+        # Reshaping the array into a 9x9 numpy array
+        sudoku_array = np.reshape(data_array, (9, 9))
+    except ValueError:
+        print(
+            "->You have entered an invalid sudoku board."
+            "\n->Please check your input text file is in the following format"
+            "\n->0 representing empty cells and numbers representing filled cells"
+            "\n->81 cells in total, separated by |, + and - as shown below:"
+        )
+        print(
+            "\n000|007|000\n000|009|504\n000|050|169\n---+---+---\n080|000|305\n075|000|290\n406|000|080\n---+---+---\n762|080|000\n103|900|000\n000|600|000"
+        )
+    else:
+        return sudoku_array
 
 
 def array_to_board(sudoku_array):
