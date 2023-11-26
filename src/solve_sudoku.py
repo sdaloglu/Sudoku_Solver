@@ -24,16 +24,15 @@ from sudoku import board as bd
 
 # Extracting the input and the output file from the command line
 input_file = sys.argv[1]
-output_file = sys.argv[2]
 
 # Trapping files that can not be opened
 
 try:
     f = open(input_file, "r")
 except IOError:
-    print("Input file could not be opened")
+    print("->Input file could not be opened. Please input a valid .txt file.")
 else:
-    print("Input file opened successfully")
+    print("->Input file opened successfully.")
 
     # Read the text file into a string
     data = f.read()
@@ -67,17 +66,26 @@ def solve_sudoku(sudoku_array):
 
 f.close()
 
-# Outputting the solved sudoku on the terminal
-solve_sudoku(sudoku_array)
-print(sudoku_array)
+# Solving the sudoku
+solved_bool = solve_sudoku(sudoku_array)
 
-# Converting the solution numpy array into a .txt file
-board = bd.array_to_board(sudoku_array)
+if solved_bool is False:
+    print("->Sudoku could not be solved.")
+elif solved_bool is True:
+    print("->Sudoku solved successfully.")
+    print("->Please see the output.txt file for the solution.")
+    print("_______________________________________________\n")
+    # Converting the solution numpy array into a .txt file
+    board = bd.array_to_board(sudoku_array)
+    print(board)
+    print("_______________________________________________")
 
+
+# Writing the solution to a .txt file
 try:
-    output = open(output_file, "w")
+    output = open("output.txt", "x")
 except IOError:
-    print("Output file could not be opened")
+    print("Output file could not be created")
 else:
     output.write(board)
     output.close()
