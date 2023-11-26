@@ -42,9 +42,22 @@ else:
 sudoku_array = bd.board_to_array(data)
 
 
+# Create a count variable to keep track of the number of iterations in recursion
+count = 0
+
+
 def solve_sudoku(sudoku_array):
+    global count
+    count += 1
+
+    if count == 1e6:
+        # This implies that the algorithm is stuck and not solving the sudoku
+        print("Algorithm is stuck. No solution is found.")
+
+        return False
+
     if bt.find_empty(sudoku_array) is None:
-        # This means that the sudoku is solved
+        # This implies that the sudoku is solved
         return True
 
     else:
@@ -81,12 +94,13 @@ elif solved_bool is True:
     print(board)
     print("_______________________________________________")
 
+    # Writing the solution to a .txt file
+    try:
+        output = open("output.txt", "x")
+    except IOError:
+        print("Output file could not be created")
+        print("Please check if there is an output.txt file in the directory.")
 
-# Writing the solution to a .txt file
-try:
-    output = open("output.txt", "x")
-except IOError:
-    print("Output file could not be created")
-else:
-    output.write(board)
-    output.close()
+    else:
+        output.write(board)
+        output.close()
