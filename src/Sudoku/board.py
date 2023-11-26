@@ -124,18 +124,20 @@ def array_to_board(sudoku_array):
     # Convert the array into a list of strings
     sudoku_array = [str(i) for i in sudoku_array]
 
-    for i in range(3, 109, 4):
-        sudoku_array = np.insert(sudoku_array, i, "|")
+    wall_index = [3, 6, 12, 15, 21, 24, 30, 33, 39, 42, 48, 51, 57, 60, 66, 69, 75, 78]
+    sudoku_array = np.insert(sudoku_array, wall_index, "|")
 
-    for i in range(12, 109, 13):
+    # Adding new lines to the array
+    for i in range(11, 109, 12):
         sudoku_array = np.insert(sudoku_array, i, "\n")
 
-    for i in range(39, 109, 40):
+    # Adding spaces between 3 rows
+    for i in range(36, 109, 37):
         sudoku_array = np.insert(sudoku_array, i, "\n\n")
 
     board = "".join(sudoku_array)
 
     inline = "---+---+---"
-    board = board[:39] + inline + board[39:79] + inline + board[79:]
+    board = board[:36] + inline + board[36:73] + inline + board[73:]
 
     return board
