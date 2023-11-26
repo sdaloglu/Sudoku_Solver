@@ -1,3 +1,6 @@
+# Load Modules:
+import numpy as np
+
 """!@file backtracking.py
 @brief Module containing functions for backtracking algorithm.
 
@@ -105,6 +108,9 @@ def find_empty(sudoku):
     @return empty_cell: tuple
         Tuple containing the coordinates of the empty cells
     """
+    if isinstance(sudoku, np.ndarray) is False:
+        print("->Input must be a numpy array for find_empty function.")
+        return 0
 
     # Looping over the sudoku to find the next empty cell
     for i in range(len(sudoku)):
