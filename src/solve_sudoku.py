@@ -44,6 +44,7 @@ sudoku_array = bd.board_to_array(data)
 
 def solve_sudoku(sudoku_array):
     if bt.find_empty(sudoku_array) is None:
+        # This means that the sudoku is solved
         return True
 
     else:
@@ -58,7 +59,7 @@ def solve_sudoku(sudoku_array):
             if solve_sudoku(sudoku_array):
                 return True
 
-            # Sequence of guesses is not valid, revert back
+            # Initial assignment is not valid, revert back
             sudoku_array[empty_cell[0], empty_cell[1]] = 0
 
     return False
