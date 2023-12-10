@@ -1,0 +1,12 @@
+name: rc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - line_profiler
+  - numpy
+  - pytest
+  - matplotlib
+  - python=3.9
+  - tqdm
+prefix: /Users/mertdaloglu/anaconda3/envs/rc
