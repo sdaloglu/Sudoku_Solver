@@ -1,5 +1,5 @@
 # Use a base image
-FROM <base_image>
+FROM continuumio/miniconda3
 
 # Set the working directory
 WORKDIR /app
@@ -7,14 +7,8 @@ WORKDIR /app
 # Copy the project files to the working directory
 COPY . .
 
-# Install dependencies
-RUN <command_to_install_dependencies>
+# Create conda environment using the environment.yml file
+RUN conda env create -f environment.yml
 
-# Build the project
-RUN <command_to_build_project>
-
-# Expose the necessary ports
-EXPOSE <port_number>
-
-# Define the command to run the project
-CMD <command_to_run_project>
+# Ensure environment is activated when container starts
+RUN echo "conda activate rc" >> ~/.bashrc
