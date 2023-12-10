@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_0',['data',['../namespacesolve__sudoku.html#a922aa896641778d6e331807728558231',1,'solve_sudoku']]]
+  ['count_0',['count',['../namespacesolve__sudoku.html#a02a48aad7bbea1304a4ba2cb99c09b53',1,'solve_sudoku']]]
 ];

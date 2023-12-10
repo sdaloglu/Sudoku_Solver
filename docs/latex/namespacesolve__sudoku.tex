@@ -15,17 +15,19 @@ This code solves a sudoku puzzle using backtracking algorithm.
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}} = sys.\+argv\mbox{[}1\mbox{]}
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}{output\+\_\+file}} = sys.\+argv\mbox{[}2\mbox{]}
-\item
 \mbox{\hyperlink{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}{f}} = open(\mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}}, "{}r"{})
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}} = f.\+read()
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}} = bd.\+board\+\_\+to\+\_\+array(\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}})
 \item
+int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{count}} = 0
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}{solved\+\_\+bool}} = \mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+\item
 \mbox{\hyperlink{namespacesolve__sudoku_a451685229c9b66d6d124e863853c8fee}{board}} = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}{output}} = open(\mbox{\hyperlink{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}{output\+\_\+file}}, "{}w"{})
+\mbox{\hyperlink{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}{output}} = open("{}output.\+txt"{}, "{}x"{})
 \end{DoxyCompactItemize}
 
 
@@ -34,7 +36,7 @@ This code solves a sudoku puzzle using backtracking algorithm.
 
 Explain how it works step by step
 
-Backtracking algorithm is a brute force method which tries all possible values for the empty boxed until it finds the correct one.
+Backtracking algorithm is a brute force method which tries all possible values for the empty cells until it finds the correct one.
 
 The algorithm reverts back to the previous configuration of the sudoku table as soon as a contradiction is found with the current configuration.
 
@@ -58,6 +60,12 @@ The algorithm reverts back to the previous configuration of the sudoku table as 
 \doxysubsubsection{\texorpdfstring{board}{board}}
 {\footnotesize\ttfamily solve\+\_\+sudoku.\+board = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})}
 
+\Hypertarget{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}\label{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}
+\index{solve\_sudoku@{solve\_sudoku}!count@{count}}
+\index{count@{count}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int solve\+\_\+sudoku.\+count = 0}
+
 \Hypertarget{namespacesolve__sudoku_a922aa896641778d6e331807728558231}\label{namespacesolve__sudoku_a922aa896641778d6e331807728558231}
 \index{solve\_sudoku@{solve\_sudoku}!data@{data}}
 \index{data@{data}!solve\_sudoku@{solve\_sudoku}}
@@ -80,13 +88,13 @@ The algorithm reverts back to the previous configuration of the sudoku table as 
 \index{solve\_sudoku@{solve\_sudoku}!output@{output}}
 \index{output@{output}!solve\_sudoku@{solve\_sudoku}}
 \doxysubsubsection{\texorpdfstring{output}{output}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+output = open(\mbox{\hyperlink{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}{output\+\_\+file}}, "{}w"{})}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+output = open("{}output.\+txt"{}, "{}x"{})}
 
-\Hypertarget{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}\label{namespacesolve__sudoku_a8b061eedb7e4de57663c9248faf93297}
-\index{solve\_sudoku@{solve\_sudoku}!output\_file@{output\_file}}
-\index{output\_file@{output\_file}!solve\_sudoku@{solve\_sudoku}}
-\doxysubsubsection{\texorpdfstring{output\_file}{output\_file}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+output\+\_\+file = sys.\+argv\mbox{[}2\mbox{]}}
+\Hypertarget{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}\label{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}
+\index{solve\_sudoku@{solve\_sudoku}!solved\_bool@{solved\_bool}}
+\index{solved\_bool@{solved\_bool}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{solved\_bool}{solved\_bool}}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+solved\+\_\+bool = \mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})}
 
 \Hypertarget{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}\label{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}
 \index{solve\_sudoku@{solve\_sudoku}!sudoku\_array@{sudoku\_array}}
