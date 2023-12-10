@@ -53,8 +53,7 @@ def solve_sudoku(sudoku_array):
     if count == 1e6:
         # This implies that the algorithm is stuck and not solving the sudoku
         print("Algorithm is stuck. No solution is found.")
-
-        return False
+        raise SystemExit
 
     if bt.find_empty(sudoku_array) is None:
         # This implies that the sudoku is solved
