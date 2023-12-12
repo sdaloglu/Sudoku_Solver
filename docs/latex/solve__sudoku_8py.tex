@@ -1,14 +1,19 @@
 \doxysection{/\+Users/mertdaloglu/\+Desktop/\+Course\+Work/\+RC\+\_\+coursework/smd89/src/solve\+\_\+sudoku.py File Reference}
 \hypertarget{solve__sudoku_8py}{}\label{solve__sudoku_8py}\index{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/solve\_sudoku.py@{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/solve\_sudoku.py}}
+
+
+Main .py file for sudoku solving backtracking algorithm.
+
+
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item
 namespace \mbox{\hyperlink{namespacesolve__sudoku}{solve\+\_\+sudoku}}
-\begin{DoxyCompactList}\small\item\em This code solves a sudoku puzzle using backtracking algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku.\+solve\+\_\+sudoku}} (\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+bool \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku.\+solve\+\_\+sudoku}} (np.\+ndarray \mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -23,9 +28,17 @@ namespace \mbox{\hyperlink{namespacesolve__sudoku}{solve\+\_\+sudoku}}
 \item
 int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{solve\+\_\+sudoku.\+count}} = 0
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}{solve\+\_\+sudoku.\+solved\+\_\+bool}} = \mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+\mbox{\hyperlink{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}{solve\+\_\+sudoku.\+solved\+\_\+bool}} = \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a451685229c9b66d6d124e863853c8fee}{solve\+\_\+sudoku.\+board}} = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}{solve\+\_\+sudoku.\+output}} = open("{}output.\+txt"{}, "{}x"{})
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main .py file for sudoku solving backtracking algorithm.
+
+Backtracking algorithm is a brute force method which tries all possible values for the empty cells until it finds the correct one. The algorithm reverts back to the previous configuration of the sudoku table as soon as a contradiction is found with the current configuration. \begin{DoxyAuthor}{Author}
+Created by S.\+M. Daloglu\+: \href{mailto:smd89@cam.ac.uk}{\texttt{ smd89@cam.\+ac.\+uk}} on 05/12/2023
+\end{DoxyAuthor}

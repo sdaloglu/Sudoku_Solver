@@ -81,36 +81,36 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab147effdfcccd358a67f90dd58dc48ae" id="r_ab147effdfcccd358a67f90dd58dc48ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#ab147effdfcccd358a67f90dd58dc48ae">check_validity</a> (sudoku, guess, position)</td></tr>
-<tr class="memdesc:ab147effdfcccd358a67f90dd58dc48ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">!  <br /></td></tr>
-<tr class="separator:ab147effdfcccd358a67f90dd58dc48ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af269f359555d612abd3707fa50616f3d" id="r_af269f359555d612abd3707fa50616f3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#af269f359555d612abd3707fa50616f3d">find_empty</a> (sudoku)</td></tr>
-<tr class="memdesc:af269f359555d612abd3707fa50616f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">!  <br /></td></tr>
-<tr class="separator:af269f359555d612abd3707fa50616f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3251d0ea7cd30ac53d48bd400a2a06" id="r_a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#a0d3251d0ea7cd30ac53d48bd400a2a06">check_validity</a> (np.ndarray sudoku, int guess, tuple position)</td></tr>
+<tr class="memdesc:a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the validity of the guess placed in the empty cell.  <br /></td></tr>
+<tr class="separator:a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c912322af66999d1a33e7f0c2dd0f5b" id="r_a1c912322af66999d1a33e7f0c2dd0f5b"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#a1c912322af66999d1a33e7f0c2dd0f5b">find_empty</a> (np.ndarray sudoku)</td></tr>
+<tr class="memdesc:a1c912322af66999d1a33e7f0c2dd0f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the next empty cell in the sudoku.  <br /></td></tr>
+<tr class="separator:a1c912322af66999d1a33e7f0c2dd0f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab147effdfcccd358a67f90dd58dc48ae" name="ab147effdfcccd358a67f90dd58dc48ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab147effdfcccd358a67f90dd58dc48ae">&#9670;&#160;</a></span>check_validity()</h2>
+<a id="a0d3251d0ea7cd30ac53d48bd400a2a06" name="a0d3251d0ea7cd30ac53d48bd400a2a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d3251d0ea7cd30ac53d48bd400a2a06">&#9670;&#160;</a></span>check_validity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Sudoku.backtracking.check_validity </td>
+          <td class="memname"> bool Sudoku.backtracking.check_validity </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">np.ndarray&#160;</td>
           <td class="paramname"><em>sudoku</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>guess</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">tuple&#160;</td>
           <td class="paramname"><em>position</em>&#160;</td>
         </tr>
         <tr>
@@ -121,53 +121,45 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>! </p>
-<p><a class="el" href="namespace_sudoku.html">Sudoku</a> solving algorithm using backtracking</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
-Parameters:</h2>
+<p>Checks the validity of the guess placed in the empty cell. </p>
+<p>This function checks the validity of the guess placed in the empty cell.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sudoku</td><td>9x1 numpy array <a class="el" href="namespace_sudoku.html">Sudoku</a> to be solved</td></tr>
-    <tr><td class="paramname">guess</td><td>int Guess to be checked for validity</td></tr>
-    <tr><td class="paramname">position</td><td>tuple Tuple containing the coordinates of the empty cell used for guessing</td></tr>
+    <tr><td class="paramname">sudoku</td><td><a class="el" href="namespace_sudoku.html">Sudoku</a> to be solved. <br  />
+ </td></tr>
+    <tr><td class="paramname">guess</td><td>Guess to be checked for validity. </td></tr>
+    <tr><td class="paramname">position</td><td>Coordinates of the empty cell used for guessing.</td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Returns:</h2>
-<dl class="section return"><dt>Returns</dt><dd>Boolian: True if the guess is valid, False if the guess is invalid </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the guess is valid, False if the guess is invalid.s </dd></dl>
 
 </div>
 </div>
-<a id="af269f359555d612abd3707fa50616f3d" name="af269f359555d612abd3707fa50616f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af269f359555d612abd3707fa50616f3d">&#9670;&#160;</a></span>find_empty()</h2>
+<a id="a1c912322af66999d1a33e7f0c2dd0f5b" name="a1c912322af66999d1a33e7f0c2dd0f5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c912322af66999d1a33e7f0c2dd0f5b">&#9670;&#160;</a></span>find_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Sudoku.backtracking.find_empty </td>
+          <td class="memname"> tuple Sudoku.backtracking.find_empty </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">np.ndarray&#160;</td>
           <td class="paramname"><em>sudoku</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>! </p>
-<p>Finds the next empty cell in the sudoku</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Parameters:</h2>
+<p>Finds the next empty cell in the sudoku. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sudoku</td><td>9x1 numpy array <a class="el" href="namespace_sudoku.html">Sudoku</a> to be checked for empty cells</td></tr>
+    <tr><td class="paramname">sudoku</td><td><a class="el" href="namespace_sudoku.html">Sudoku</a> to be checked for empty cells</td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Returns:</h2>
-<dl class="section return"><dt>Returns</dt><dd>empty_cell: tuple Tuple containing the coordinates of the empty cells </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinates of the empty cells </dd></dl>
 
 </div>
 </div>

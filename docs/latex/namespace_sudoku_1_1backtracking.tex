@@ -3,54 +3,53 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item
-\mbox{\hyperlink{namespace_sudoku_1_1backtracking_ab147effdfcccd358a67f90dd58dc48ae}{check\+\_\+validity}} (sudoku, guess, position)
-\begin{DoxyCompactList}\small\item\em ! \end{DoxyCompactList}\item
-\mbox{\hyperlink{namespace_sudoku_1_1backtracking_af269f359555d612abd3707fa50616f3d}{find\+\_\+empty}} (sudoku)
-\begin{DoxyCompactList}\small\item\em ! \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{namespace_sudoku_1_1backtracking_a0d3251d0ea7cd30ac53d48bd400a2a06}{check\+\_\+validity}} (np.\+ndarray sudoku, int guess, tuple position)
+\begin{DoxyCompactList}\small\item\em Checks the validity of the guess placed in the empty cell. \end{DoxyCompactList}\item
+tuple \mbox{\hyperlink{namespace_sudoku_1_1backtracking_a1c912322af66999d1a33e7f0c2dd0f5b}{find\+\_\+empty}} (np.\+ndarray sudoku)
+\begin{DoxyCompactList}\small\item\em Finds the next empty cell in the sudoku. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{namespace_sudoku_1_1backtracking_ab147effdfcccd358a67f90dd58dc48ae}\label{namespace_sudoku_1_1backtracking_ab147effdfcccd358a67f90dd58dc48ae}
+\Hypertarget{namespace_sudoku_1_1backtracking_a0d3251d0ea7cd30ac53d48bd400a2a06}\label{namespace_sudoku_1_1backtracking_a0d3251d0ea7cd30ac53d48bd400a2a06}
 \index{Sudoku.backtracking@{Sudoku.backtracking}!check\_validity@{check\_validity}}
 \index{check\_validity@{check\_validity}!Sudoku.backtracking@{Sudoku.backtracking}}
 \doxysubsubsection{\texorpdfstring{check\_validity()}{check\_validity()}}
-{\footnotesize\ttfamily Sudoku.\+backtracking.\+check\+\_\+validity (\begin{DoxyParamCaption}\item[{}]{sudoku,  }\item[{}]{guess,  }\item[{}]{position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  bool Sudoku.\+backtracking.\+check\+\_\+validity (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku,  }\item[{int}]{guess,  }\item[{tuple}]{position }\end{DoxyParamCaption})}
 
 
 
-!
+Checks the validity of the guess placed in the empty cell.
 
-\doxylink{namespace_sudoku}{Sudoku} solving algorithm using backtracking\hypertarget{namespace_sudoku_1_1backtracking_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{Parameters\+:}{Parameters:}}\label{namespace_sudoku_1_1backtracking_autotoc_md0}
+This function checks the validity of the guess placed in the empty cell.
+
 
 \begin{DoxyParams}{Parameters}
-{\em sudoku} & 9x1 numpy array \doxylink{namespace_sudoku}{Sudoku} to be solved\\
+{\em sudoku} & \doxylink{namespace_sudoku}{Sudoku} to be solved. ~\newline
+ \\
 \hline
-{\em guess} & int Guess to be checked for validity\\
+{\em guess} & Guess to be checked for validity. \\
 \hline
-{\em position} & tuple Tuple containing the coordinates of the empty cell used for guessing\\
+{\em position} & Coordinates of the empty cell used for guessing.\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespace_sudoku_1_1backtracking_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Returns\+:}{Returns:}}\label{namespace_sudoku_1_1backtracking_autotoc_md1}
 \begin{DoxyReturn}{Returns}
-Boolian\+: True if the guess is valid, False if the guess is invalid
+True if the guess is valid, False if the guess is invalid.\+s
 \end{DoxyReturn}
-\Hypertarget{namespace_sudoku_1_1backtracking_af269f359555d612abd3707fa50616f3d}\label{namespace_sudoku_1_1backtracking_af269f359555d612abd3707fa50616f3d}
+\Hypertarget{namespace_sudoku_1_1backtracking_a1c912322af66999d1a33e7f0c2dd0f5b}\label{namespace_sudoku_1_1backtracking_a1c912322af66999d1a33e7f0c2dd0f5b}
 \index{Sudoku.backtracking@{Sudoku.backtracking}!find\_empty@{find\_empty}}
 \index{find\_empty@{find\_empty}!Sudoku.backtracking@{Sudoku.backtracking}}
 \doxysubsubsection{\texorpdfstring{find\_empty()}{find\_empty()}}
-{\footnotesize\ttfamily Sudoku.\+backtracking.\+find\+\_\+empty (\begin{DoxyParamCaption}\item[{}]{sudoku }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  tuple Sudoku.\+backtracking.\+find\+\_\+empty (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku }\end{DoxyParamCaption})}
 
 
 
-!
+Finds the next empty cell in the sudoku.
 
-Finds the next empty cell in the sudoku\hypertarget{namespace_sudoku_1_1backtracking_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Parameters\+:}{Parameters:}}\label{namespace_sudoku_1_1backtracking_autotoc_md2}
 
 \begin{DoxyParams}{Parameters}
-{\em sudoku} & 9x1 numpy array \doxylink{namespace_sudoku}{Sudoku} to be checked for empty cells\\
+{\em sudoku} & \doxylink{namespace_sudoku}{Sudoku} to be checked for empty cells\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespace_sudoku_1_1backtracking_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Returns\+:}{Returns:}}\label{namespace_sudoku_1_1backtracking_autotoc_md3}
 \begin{DoxyReturn}{Returns}
-empty\+\_\+cell\+: tuple Tuple containing the coordinates of the empty cells
+Coordinates of the empty cells
 \end{DoxyReturn}

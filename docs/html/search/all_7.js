@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parameters_3a_0',['parameters:',['../namespace_sudoku_1_1backtracking.html#autotoc_md0',1,'Parameters:'],['../namespace_sudoku_1_1backtracking.html#autotoc_md2',1,'Parameters:'],['../namespace_sudoku_1_1board.html#autotoc_md4',1,'Parameters:'],['../namespace_sudoku_1_1board.html#autotoc_md6',1,'Parameters:']]]
+  ['output_0',['output',['../namespacesolve__sudoku.html#aed323dbcf480f5d49183da6fa406f049',1,'solve_sudoku']]]
 ];

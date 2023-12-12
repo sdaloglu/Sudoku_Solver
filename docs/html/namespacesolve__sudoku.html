@@ -75,14 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">solve_sudoku Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>This code solves a sudoku puzzle using backtracking algorithm.
-<a href="namespacesolve__sudoku.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac5da45d8a8b4609ca2693e734850b1a6" id="r_ac5da45d8a8b4609ca2693e734850b1a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#ac5da45d8a8b4609ca2693e734850b1a6">solve_sudoku</a> (<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td></tr>
-<tr class="separator:ac5da45d8a8b4609ca2693e734850b1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfab2484dd03f1e6a88322518fc6a9db" id="r_acfab2484dd03f1e6a88322518fc6a9db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#acfab2484dd03f1e6a88322518fc6a9db">solve_sudoku</a> (np.ndarray <a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td></tr>
+<tr class="separator:acfab2484dd03f1e6a88322518fc6a9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -96,30 +93,24 @@ Variables</h2></td></tr>
 <tr class="separator:adb05a0546d163db06c3e69d5500687dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02a48aad7bbea1304a4ba2cb99c09b53" id="r_a02a48aad7bbea1304a4ba2cb99c09b53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#a02a48aad7bbea1304a4ba2cb99c09b53">count</a> = 0</td></tr>
 <tr class="separator:a02a48aad7bbea1304a4ba2cb99c09b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a6644179c3d893ec5208ac9d4d1df9" id="r_aa4a6644179c3d893ec5208ac9d4d1df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#aa4a6644179c3d893ec5208ac9d4d1df9">solved_bool</a> = <a class="el" href="namespacesolve__sudoku.html#ac5da45d8a8b4609ca2693e734850b1a6">solve_sudoku</a>(<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td></tr>
+<tr class="memitem:aa4a6644179c3d893ec5208ac9d4d1df9" id="r_aa4a6644179c3d893ec5208ac9d4d1df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#aa4a6644179c3d893ec5208ac9d4d1df9">solved_bool</a> = <a class="el" href="namespacesolve__sudoku.html#acfab2484dd03f1e6a88322518fc6a9db">solve_sudoku</a>(<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td></tr>
 <tr class="separator:aa4a6644179c3d893ec5208ac9d4d1df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a451685229c9b66d6d124e863853c8fee" id="r_a451685229c9b66d6d124e863853c8fee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#a451685229c9b66d6d124e863853c8fee">board</a> = bd.array_to_board(<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td></tr>
 <tr class="separator:a451685229c9b66d6d124e863853c8fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed323dbcf480f5d49183da6fa406f049" id="r_aed323dbcf480f5d49183da6fa406f049"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolve__sudoku.html#aed323dbcf480f5d49183da6fa406f049">output</a> = open(&quot;output.txt&quot;, &quot;x&quot;)</td></tr>
 <tr class="separator:aed323dbcf480f5d49183da6fa406f049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This code solves a sudoku puzzle using backtracking algorithm. </p>
-<p>Explain how it works step by step</p>
-<p>Backtracking algorithm is a brute force method which tries all possible values for the empty cells until it finds the correct one.</p>
-<p>The algorithm reverts back to the previous configuration of the sudoku table as soon as a contradiction is found with the current configuration.</p>
-<pre class="fragment">Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
-</pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac5da45d8a8b4609ca2693e734850b1a6" name="ac5da45d8a8b4609ca2693e734850b1a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5da45d8a8b4609ca2693e734850b1a6">&#9670;&#160;</a></span>solve_sudoku()</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="acfab2484dd03f1e6a88322518fc6a9db" name="acfab2484dd03f1e6a88322518fc6a9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfab2484dd03f1e6a88322518fc6a9db">&#9670;&#160;</a></span>solve_sudoku()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">solve_sudoku.solve_sudoku </td>
+          <td class="memname"> bool solve_sudoku.solve_sudoku </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">np.ndarray&#160;</td>
           <td class="paramname"><em>sudoku_array</em></td><td>)</td>
           <td></td>
         </tr>
@@ -220,7 +211,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">solve_sudoku.solved_bool = <a class="el" href="namespacesolve__sudoku.html#ac5da45d8a8b4609ca2693e734850b1a6">solve_sudoku</a>(<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td>
+          <td class="memname">solve_sudoku.solved_bool = <a class="el" href="namespacesolve__sudoku.html#acfab2484dd03f1e6a88322518fc6a9db">solve_sudoku</a>(<a class="el" href="namespacesolve__sudoku.html#adb05a0546d163db06c3e69d5500687dc">sudoku_array</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,14 +1,9 @@
 \doxysection{solve\+\_\+sudoku Namespace Reference}
 \hypertarget{namespacesolve__sudoku}{}\label{namespacesolve__sudoku}\index{solve\_sudoku@{solve\_sudoku}}
-
-
-This code solves a sudoku puzzle using backtracking algorithm.
-
-
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}} (\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+bool \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku}} (np.\+ndarray \mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -23,7 +18,7 @@ This code solves a sudoku puzzle using backtracking algorithm.
 \item
 int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{count}} = 0
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}{solved\+\_\+bool}} = \mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
+\mbox{\hyperlink{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}{solved\+\_\+bool}} = \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a451685229c9b66d6d124e863853c8fee}{board}} = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
@@ -31,25 +26,12 @@ int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{c
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-This code solves a sudoku puzzle using backtracking algorithm.
-
-Explain how it works step by step
-
-Backtracking algorithm is a brute force method which tries all possible values for the empty cells until it finds the correct one.
-
-The algorithm reverts back to the previous configuration of the sudoku table as soon as a contradiction is found with the current configuration.
-
-\begin{DoxyVerb}Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
-\end{DoxyVerb}
-
-
 \doxysubsection{Function Documentation}
-\Hypertarget{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}\label{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}
+\Hypertarget{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}\label{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}
 \index{solve\_sudoku@{solve\_sudoku}!solve\_sudoku@{solve\_sudoku}}
 \index{solve\_sudoku@{solve\_sudoku}!solve\_sudoku@{solve\_sudoku}}
 \doxysubsubsection{\texorpdfstring{solve\_sudoku()}{solve\_sudoku()}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+solve\+\_\+sudoku (\begin{DoxyParamCaption}\item[{}]{sudoku\+\_\+array }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  bool solve\+\_\+sudoku.\+solve\+\_\+sudoku (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku\+\_\+array }\end{DoxyParamCaption})}
 
 
 
@@ -94,7 +76,7 @@ The algorithm reverts back to the previous configuration of the sudoku table as 
 \index{solve\_sudoku@{solve\_sudoku}!solved\_bool@{solved\_bool}}
 \index{solved\_bool@{solved\_bool}!solve\_sudoku@{solve\_sudoku}}
 \doxysubsubsection{\texorpdfstring{solved\_bool}{solved\_bool}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+solved\+\_\+bool = \mbox{\hyperlink{namespacesolve__sudoku_ac5da45d8a8b4609ca2693e734850b1a6}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+solved\+\_\+bool = \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku}}(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})}
 
 \Hypertarget{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}\label{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}
 \index{solve\_sudoku@{solve\_sudoku}!sudoku\_array@{sudoku\_array}}
