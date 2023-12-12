@@ -9,4 +9,5 @@ dependencies:
   - matplotlib
   - python=3.9
   - tqdm
+  - doxygen
 prefix: /Users/mertdaloglu/anaconda3/envs/rc
