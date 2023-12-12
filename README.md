@@ -9,6 +9,6 @@ Instructions for running the code:
  > docker build -t conda .
  > docker run --rm -ti conda
 
- Instructions for running the code at root level directory:
-
- >python src/solve_sudoku.py test_boards/input.txt
+ Instructions for running the code inside /test_boards directory:
+ First place the input .txt file inside /test_boards directory
+ >python ../src/solve_sudoku.py input.txt
