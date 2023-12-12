@@ -1,4 +1,4 @@
-from src.sudoku.backtracking import check_validity
+from src.sudoku.backtracking import check_guess
 import numpy as np
 
 
@@ -28,20 +28,20 @@ def test_check_guess():
     )
 
     # Testing valid guesses in the column:
-    assert check_validity(sudoku, 2, (0, 1))
-    assert check_validity(sudoku, 7, (2, 2))
+    assert check_guess(sudoku, 2, (0, 1))
+    assert check_guess(sudoku, 7, (2, 2))
     # Testing invalid guesses in the column:
-    assert not check_validity(sudoku, 9, (7, 7))
-    assert not check_validity(sudoku, 1, (7, 0))
+    assert not check_guess(sudoku, 9, (7, 7))
+    assert not check_guess(sudoku, 1, (7, 0))
 
     # Testing valid guesses in the row:
-    assert check_validity(sudoku, 6, (4, 2))
-    assert check_validity(sudoku, 3, (7, 7))
+    assert check_guess(sudoku, 6, (4, 2))
+    assert check_guess(sudoku, 3, (7, 7))
     # Testing invalid guesses in the row:
-    assert not check_validity(sudoku, 7, (5, 6))
-    assert not check_validity(sudoku, 4, (0, 7))
+    assert not check_guess(sudoku, 7, (5, 6))
+    assert not check_guess(sudoku, 4, (0, 7))
 
     # Testing valid guesses in sub-boxes:
-    assert check_validity(sudoku, 9, (6, 4))
+    assert check_guess(sudoku, 9, (6, 4))
     # Testing invalid guesses in sub-boxes:
-    assert not check_validity(sudoku, 6, (2, 7))
+    assert not check_guess(sudoku, 6, (2, 7))

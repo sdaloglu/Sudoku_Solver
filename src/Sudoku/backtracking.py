@@ -1,61 +1,37 @@
-# Load Modules:
-import numpy as np
-
 """!@file backtracking.py
 @brief Module containing functions for backtracking algorithm.
 
 @details This module contains functions for backtracking algorithm.
+Explain each function in detail here.
+
+# Functions
+    check_guess
+        Checks the validity of the guess placed in the empty cell.
+
+    find_empty
+        Finds the next empty cell in the sudoku.
+
+
+# Examples
+    Say how to use the function here.
+
 @author Created by S.M. Daloglu on 20/11/2023
 """
 
-
-"""
-This Module contains functions .... to create ...
-
-Contains:
-----------------------------------------
-    check_validity
-        What the function does
-    find_empty
-        What the function does
-----------------------------------------
+# Load Modules:
+import numpy as np
 
 
-All functions take x arguments:
-----------------------------------------
-    arg1
-        explain arg1
-    arg2
-        explain arg2
-----------------------------------------
+def check_guess(sudoku: np.ndarray, guess: int, position: tuple) -> bool:
+    """!@brief Checks the validity of the guess placed in the empty cell.
 
-Calculation is done by ....
+    @details This function checks the validity of the guess placed in the empty cell.
 
-Written by Sabahattin Mert Daloglu: smd89@cam.ac.uk
-"""
+    @param sudoku: Sudoku to be solved.
+    @param guess: Guess to be checked for validity.
+    @param position: Coordinates of the empty cell used for guessing.
 
-
-def check_validity(sudoku, guess, position):
-    """
-    !@brief Sudoku solving algorithm using backtracking
-
-    Parameters:
-    -----------
-    @param sudoku: 9x1 numpy array
-        Sudoku to be solved
-
-    @param guess: int
-        Guess to be checked for validity
-
-    @param position: tuple
-        Tuple containing the coordinates of the empty cell used for guessing
-
-
-    Returns:
-    --------
-
-    @return Boolian:
-        True if the guess is valid, False if the guess is invalid
+    @return True if the guess is valid, False if the guess is invalid.s
 
 
     """
@@ -92,21 +68,13 @@ def check_validity(sudoku, guess, position):
     return True
 
 
-def find_empty(sudoku):
-    """
-    !@brief Finds the next empty cell in the sudoku
+def find_empty(sudoku: np.ndarray) -> tuple:
+    """!@brief Finds the next empty cell in the sudoku.
 
-    Parameters:
-    -----------
-    @param sudoku: 9x1 numpy array
-        Sudoku to be checked for empty cells
+    @param sudoku: Sudoku to be checked for empty cells
 
 
-    Returns:
-    --------
-
-    @return empty_cell: tuple
-        Tuple containing the coordinates of the empty cells
+    @return Coordinates of the empty cells
     """
     if isinstance(sudoku, np.ndarray) is False:
         print("->Input must be a numpy array for find_empty function.")
