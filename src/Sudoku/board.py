@@ -133,8 +133,8 @@ def board_to_array(board: str) -> np.ndarray:
     # Creating the inner array of the 2D sudoku which will store 9 numbers
     row_array = np.array([])
 
-    # Creating an array of sudoku numbers to search for in the board
-    sudoku_numbers = np.array(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+    # Creating an array of sudoku numbers as string type to search for in the board
+    sudoku_numbers = np.arange(0, 10, 1).astype(str)
 
     for value in board:
         if value in sudoku_numbers:
