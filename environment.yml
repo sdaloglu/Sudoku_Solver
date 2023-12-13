@@ -10,4 +10,6 @@ dependencies:
   - python=3.9
   - tqdm
   - doxygen
+  - black
+  - flake8
 prefix: /Users/mertdaloglu/anaconda3/envs/rc
