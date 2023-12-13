@@ -72,7 +72,7 @@ def test_check_board():
         ]
     )
 
-    assert check_board(valid_board) is True
-    assert check_board(invalid_board1) is False
-    assert check_board(invalid_board2) is False
-    assert check_board(invalid_board3) is False
+    assert check_board(valid_board)
+    assert not check_board(invalid_board1)
+    assert not check_board(invalid_board2)
+    assert not check_board(invalid_board3)
