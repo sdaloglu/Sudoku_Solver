@@ -41,30 +41,22 @@ def check_guess(sudoku: np.ndarray, guess: int, position: tuple) -> bool:
     # Extracting the coordinates of the empty cell containing the guess
     x, y = position[0], position[1]
 
-    # Calculating the coordinates of the 3x3 box in which the guess is located
+    # Calculating the starting coordinates of the 3x3 box in which the guess is located
     x_box = (x // 3) * 3
     y_box = (y // 3) * 3
-    box_y_range = [y_box, y_box + 1, y_box + 2]
-    box_x_range = [x_box, x_box + 1, x_box + 2]
 
-    for i in box_x_range:
-        for j in box_y_range:
-            if sudoku[i, j] == guess and (i, j) != position:
-                return False
+    # Checking the validity of the guess in the 3x3 box:
+    if np.any(sudoku[x_box : x_box + 3, y_box : y_box + 3] == guess):
+        return False
 
     # Checking the validity of the guess in the column:
-
-    for i in range(len(sudoku[0])):
-        if sudoku[i, y] == guess and i != x:
-            return False
+    if np.any(sudoku[:, y] == guess):
+        return False
 
     # Checking the validity of the guess in the row:
+    if np.any(sudoku[x, :] == guess):
+        return False
 
-    for j in range(len(sudoku)):
-        if sudoku[x, j] == guess and j != y:
-            return False
-
-    # If the guess is valid then return True
     return True
 
 
