@@ -72,12 +72,11 @@ def find_empty(sudoku: np.ndarray) -> tuple:
         print("->Input must be a numpy array for find_empty function.")
         return 0
 
-    # Looping over the sudoku to find the next empty cell
-    for i in range(len(sudoku)):
-        for j in range(len(sudoku[i])):
-            if sudoku[i, j] == 0:
-                empty_cell = (i, j)
-                return empty_cell
+    # Find indices of zero elements
+    indices = np.where(sudoku == 0)
 
-    # If no empty cell is found, return None
-    return None
+    # Check if any zero element is found
+    if indices[0].size > 0:
+        return indices[0][0], indices[1][0]
+    else:
+        return None
