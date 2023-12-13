@@ -69,11 +69,9 @@ def load_txt(input_file) -> str:
 def check_board(board: np.ndarray) -> bool:
     """!@brief Checking if the input board is a valid sudoku board
 
-    Args:
-        board (str): _description_
+    @param board: Input Sudoku board to be checked for validity
 
-    Returns:
-        bool: _description_
+    @return True if the board is valid, False if the board is invalid
     """
     # Writing a function to check if all numbers in a given sudoku obeys the sudoku rules
     # Checking if all rows are valid
