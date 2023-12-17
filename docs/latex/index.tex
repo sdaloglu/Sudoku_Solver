@@ -1,20 +1,131 @@
-\chapter{Sudoku Solver with Backtracking Algorithm}
-\hypertarget{index}{}\label{index}\index{Sudoku Solver with Backtracking Algorithm@{Sudoku Solver with Backtracking Algorithm}}
+\chapter{C1\+: Research Computing -\/ Coursework Assignment}
+\hypertarget{index}{}\label{index}\index{C1: Research Computing -\/ Coursework Assignment@{C1: Research Computing -\/ Coursework Assignment}}
 \label{index_md__2_users_2mertdaloglu_2_desktop_2_course_work_2_r_c__coursework_2smd89_2_r_e_a_d_m_e}%
 \Hypertarget{index_md__2_users_2mertdaloglu_2_desktop_2_course_work_2_r_c__coursework_2smd89_2_r_e_a_d_m_e}%
- Instructions for running the code\+:
-\begin{DoxyItemize}
-\item Add pre-\/comit instructions -\/ running \texorpdfstring{$>$}{>}pre-\/commit install explain continous integration and git hooks
-\item Add doxygen instructions (maybe?) -\/ runing \texorpdfstring{$>$}{>}doxygen in the docs folder and openning index.\+html
-\end{DoxyItemize}
+\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Description}{Description}}\label{index_autotoc_md1}
+This project contains the code required to answer coursework questions for the Research Computing course. The goal of this project is to demonstrate a well-\/structured, modular software development of the backtracking algorithm for \doxylink{namespace_sudoku}{Sudoku} solving. The advantages of the backtracking algorithm include a guaranteed solution for a valid \doxylink{namespace_sudoku}{Sudoku} and a relatively straightforward code implementation. Although given enough time, the backtracking algorithm provides a solution to every \doxylink{namespace_sudoku}{Sudoku} board, for the sake of simplicity the software for this coursework was designed to stop after 10\textsuperscript{6} recursive iterations. An alternative algorithm is recommended for \doxylink{namespace_sudoku}{Sudoku} boards that are designed to challenge the backtracking algorithm.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Problem Setting}{Problem Setting}}\label{index_autotoc_md2}
+The first step is to clone the remote Git\+Lab repository on a local machine. This project does not provide an automated cloning command inside the {\ttfamily Dockerfile} to avoid authentication errors.
 
-Instructions for running Docker\+:
-\begin{DoxyItemize}
-\item from the directory Dockerfile is in, run\+:
-\end{DoxyItemize}
+To use the software, provide an input text file containing an incomplete 9x9 grid in the following form. The zeros representing unknown values and {\ttfamily \texorpdfstring{$\vert$}{|}},{\ttfamily +},{\ttfamily -\/} separating cells. The text file should be placed in the {\ttfamily test\+\_\+boards} directory, before running the software.
 
-\begin{quote}
-docker build -\/t conda . docker run --rm -\/ti conda \end{quote}
-Instructions for running the code at root level directory\+:
 
-\texorpdfstring{$>$}{>}python \doxylink{solve__sudoku_8py}{src/solve\+\_\+sudoku.\+py} test\+\_\+boards/input.\+txt
+\begin{DoxyCode}{0}
+\DoxyCodeLine{000|007|000}
+\DoxyCodeLine{000|009|504}
+\DoxyCodeLine{000|050|169}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{080|000|305}
+\DoxyCodeLine{075|000|290}
+\DoxyCodeLine{406|000|080}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{762|080|000}
+\DoxyCodeLine{103|900|000}
+\DoxyCodeLine{000|600|000}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Environment}{Environment}}\label{index_autotoc_md3}
+This project can be easily run inside a Docker container specified with instructions listed inside the Dockerfile provided in the project. To build the docker image from the Dockerfile, run the following at the root directory of the project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{docker\ build\ -\/t\ rc\ .}
+
+\end{DoxyCode}
+
+
+To create the container using the image\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{docker\ run\ -\/-\/rm\ -\/ti\ -\/-\/name\ rc\_container\ rc}
+
+\end{DoxyCode}
+
+
+This will create a linux machine with the required conda environment named {\ttfamily rc} activated and a bash terminal open to run the commands below. All the required files inside the project in order to run the software, assuming a local copy was made previously, are copied inside the container ready to be used.\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Running the main algorithm}{Running the main algorithm}}\label{index_autotoc_md4}
+The main \doxylink{namespace_sudoku}{Sudoku} solving algorithm is located inside the {\ttfamily \doxylink{solve__sudoku_8py}{solve\+\_\+sudoku.\+py}} script. The two ways to run the main function inside the container are given below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python\ src/solve\_sudoku.py\ test\_boards/input.txt}
+
+\end{DoxyCode}
+ This command should be run from the root directory. The solution to the \doxylink{namespace_sudoku}{Sudoku} board inside the {\ttfamily input.\+txt} file is output on the terminal. The solution is also saved as a text file named {\ttfamily \$input\+\_\+file\+\_\+name\$\+\_\+solved.\+txt}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python\ ../src/solve\_sudoku.py\ input.txt}
+
+\end{DoxyCode}
+ An alternative way to run the main algorithm is from the {\ttfamily test\+\_\+boards} directory. Regardless of the choice, the output text file is always saved inside the directory where the input text file is located. One should make sure to place the input text file inside the {\ttfamily test\+\_\+boards} directory before running the software.\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{index_autotoc_md5}
+The documentation of this project can be obtained by running the following command on the terminal inside the {\ttfamily docs} directory
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen}
+
+\end{DoxyCode}
+ This command builds the documentation for the project in {\ttfamily html} and {\ttfamily latex} formats. Inside the {\ttfamily html} directory, {\ttfamily index.\+html} file can be referenced for the documentation.\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Copying files from the container to the local}{Copying files from the container to the local}}\label{index_autotoc_md6}
+Files inside the container such as documentation, or solution text files can be transferred to the local filesystem. An example of copying the files inside {\ttfamily test\+\_\+boards} directory containing the input \doxylink{namespace_sudoku}{Sudoku} boards and their corresponding solutions is shown below. This command should be run on the local terminal.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{docker\ cp\ rc\_container:/app/test\_boards/.\ ../}
+
+\end{DoxyCode}
+ {\ttfamily rc\+\_\+container} should match the name of the container. {\ttfamily ../} is the path to the local destination.\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{The use of generative A.\+I.}{The use of generative A.I.}}\label{index_autotoc_md7}
+Generative AI was used during the process of making \doxylink{namespace_sudoku}{Sudoku} test boards for the validation section. The prompt submitted to Chat\+GPT 3.\+5 is given below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Can\ you\ generate\ 10\ test\ sudoku\ boards\ as\ a\ text\ file\ in\ the\ following\ format?}
+\DoxyCodeLine{}
+\DoxyCodeLine{000|007|000}
+\DoxyCodeLine{000|009|504}
+\DoxyCodeLine{000|050|169}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{080|000|305}
+\DoxyCodeLine{075|000|290}
+\DoxyCodeLine{406|000|080}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{762|080|000}
+\DoxyCodeLine{103|900|000}
+\DoxyCodeLine{000|600|000}
+\DoxyCodeLine{}
+\DoxyCodeLine{Where\ 0's\ represent\ empty\ cells.}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Generate\ 5\ more\ test\ sudoku\ boards\ in\ the\ same\ format\ but\ this\ time\ increase\ the\ difficulty\ of\ Sudokus,\ and\ make\ them\ harder\ especially\ for\ a\ solver\ using\ the\ backtracking\ algorithm.}
+
+\end{DoxyCode}
+ Chat\+GPT was also used for suggesting alternative wordings and grammar suggestions while writing the report. The following prompts were used during this process
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{What\ is\ another\ word\ for\ <input\ word>?}
+
+\end{DoxyCode}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Is\ this\ sentence\ grammatically\ correct?\ <input\ sentence>}
+
+\end{DoxyCode}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Is\ this\ paragraph\ clear\ for\ a\ reader?\ <input\ paragraph>}
+
+\end{DoxyCode}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{How\ to\ rephrase\ this\ sentence\ to\ make\ it\ more\ clear?\ <input\ sentence>}
+
+\end{DoxyCode}
+ The outputs were partially adapted in a way that only alternative wordings were used and not the whole output while rephrasing the Introduction and Summary parts of the report.
+
+Furthermore, the suggestions from the autocomplete feature of {\ttfamily Git\+Hub Copilot} were utilized during the documentation of the unit testing functions, and code development of the project.\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Authors}{Authors}}\label{index_autotoc_md8}
+Sabahattin Mert Daloglu\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md9}
+This project is licensed under the BSD-\/3-\/\+Clause License -\/ see the \mbox{[}LICENSE\mbox{]}(LICENSE) for details.

@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Module containing functions for building a visual board in .txt format form numpy array or vise verca.
+<p>Module containing functions for the <a class="el" href="namespace_sudoku.html">Sudoku</a> board manipulation and data parsing.
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -92,25 +92,53 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afe5b2328754ef2348f7d4aab1955672b" id="r_afe5b2328754ef2348f7d4aab1955672b"><td class="memItemLeft" align="right" valign="top">np.ndarray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#afe5b2328754ef2348f7d4aab1955672b">Sudoku.board.board_to_array</a> (board)</td></tr>
-<tr class="memdesc:afe5b2328754ef2348f7d4aab1955672b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts .txt file of a sudoku board to 9x9 numpy array.  <br /></td></tr>
-<tr class="separator:afe5b2328754ef2348f7d4aab1955672b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a25114c992688c398d8fcb0053532d7" id="r_a5a25114c992688c398d8fcb0053532d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#a5a25114c992688c398d8fcb0053532d7">Sudoku.board.array_to_board</a> (np.ndarray sudoku_array)</td></tr>
-<tr class="memdesc:a5a25114c992688c398d8fcb0053532d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts 9x9 numpy array to .txt file of a sudoku board.  <br /></td></tr>
-<tr class="separator:a5a25114c992688c398d8fcb0053532d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da5779ba0ef341549817db748fccc64" id="r_a5da5779ba0ef341549817db748fccc64"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#a5da5779ba0ef341549817db748fccc64">Sudoku.board.load_txt</a> (input_file)</td></tr>
+<tr class="memdesc:a5da5779ba0ef341549817db748fccc64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the input text file.  <br /></td></tr>
+<tr class="separator:a5da5779ba0ef341549817db748fccc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204eb372c90b94983360cb436126b9d9" id="r_a204eb372c90b94983360cb436126b9d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#a204eb372c90b94983360cb436126b9d9">Sudoku.board.check_board</a> (np.ndarray board)</td></tr>
+<tr class="memdesc:a204eb372c90b94983360cb436126b9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the input board is a valid sudoku board.  <br /></td></tr>
+<tr class="separator:a204eb372c90b94983360cb436126b9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fbc8504c5b0a0dbcead8c92b8c8474" id="r_a39fbc8504c5b0a0dbcead8c92b8c8474"><td class="memItemLeft" align="right" valign="top">np.ndarray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#a39fbc8504c5b0a0dbcead8c92b8c8474">Sudoku.board.board_to_array</a> (str board)</td></tr>
+<tr class="memdesc:a39fbc8504c5b0a0dbcead8c92b8c8474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the <a class="el" href="namespace_sudoku.html">Sudoku</a> board from string type to 9x9 numpy array.  <br /></td></tr>
+<tr class="separator:a39fbc8504c5b0a0dbcead8c92b8c8474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab63272b1ebd74c47659de2f72bb388" id="r_a9ab63272b1ebd74c47659de2f72bb388"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1board.html#a9ab63272b1ebd74c47659de2f72bb388">Sudoku.board.array_to_board</a> (np.ndarray sudoku_array)</td></tr>
+<tr class="memdesc:a9ab63272b1ebd74c47659de2f72bb388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 9x9 numpy array to string of a <a class="el" href="namespace_sudoku.html">Sudoku</a> board.  <br /></td></tr>
+<tr class="separator:a9ab63272b1ebd74c47659de2f72bb388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Module containing functions for building a visual board in .txt format form numpy array or vise verca. </p>
-<p>This module contains functions for building a visual board in .txt format form numpy array or vise verca.</p>
-<p>This Module contains functions .... to create ...</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Contains</h1>
-<p>board_to_array What the function does array_to_board What the function does</p>
-<p>The function board_to_array takes a .txt file such as:</p>
-<p>000|007|000 000|009|504 000|050|169 &mdash;+&mdash;+&mdash; 080|000|305 075|000|290 406|000|080 &mdash;+&mdash;+&mdash; 762|080|000 103|900|000 000|600|000</p>
-<p>and converts it to a 9x9 numpy array in the form of:</p>
-<p>[[0,0,0,0,0,7,0,0,0],[0,0,0,0,0,9,5,0,4],[0,0,0,0,5,0,1,6,9],[0,8,0,0,0,0,3,0,5],[0,7,5,0,0,0,2,9,0],[4,0,6,0,0,0,0,8,0],[7,6,2,0,8,0,0,0,0],[1,0,3,9,0,0,0,0,0],[0,0,0,6,0,0,0,0,0]]</p>
-<dl class="section author"><dt>Author</dt><dd>Created by S.M. Daloglu on 20/11/2023 </dd></dl>
+<div class="textblock"><p>Module containing functions for the <a class="el" href="namespace_sudoku.html">Sudoku</a> board manipulation and data parsing. </p>
+<p>Functions include transforming the sudoku board from numpy array to string and vice versa. Loading the the input text file containing the <a class="el" href="namespace_sudoku.html">Sudoku</a> board and converting it to a string. Checking if the input <a class="el" href="namespace_sudoku.html">Sudoku</a> board is valid according to the <a class="el" href="namespace_sudoku.html">Sudoku</a> rules.</p>
+<h1><a class="anchor" id="autotoc_md15"></a>
+Functions</h1>
+<h2><a class="anchor" id="autotoc_md16"></a>
+load_txt</h2>
+<p>Loads the input text file into a string </p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+check_board</h2>
+<p>Checks if the input board is a valid <a class="el" href="namespace_sudoku.html">Sudoku</a> board </p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+board_to_array</h2>
+<p>Converts the <a class="el" href="namespace_sudoku.html">Sudoku</a> board from string type to 9x9 numpy array </p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+array_to_board</h2>
+<p>Converts 9x9 numpy array to string of a <a class="el" href="namespace_sudoku.html">Sudoku</a> board</p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Examples</h1>
+<p>The function load_txt loads an input .txt file in the following form: </p><div class="fragment"><div class="line">000|007|000</div>
+<div class="line">000|009|504</div>
+<div class="line">000|050|169</div>
+<div class="line">---+---+---</div>
+<div class="line">080|000|305</div>
+<div class="line">075|000|290</div>
+<div class="line">406|000|080</div>
+<div class="line">---+---+---</div>
+<div class="line">762|080|000</div>
+<div class="line">103|900|000</div>
+<div class="line">000|600|000</div>
+</div><!-- fragment --><p>and convert it into a string format as follows: </p><div class="fragment"><div class="line">000|007|000/n000|009|504/n000|050|169/n---+---+---/n080|000|305/n075|000|290/n406|000|080/n---+---+---/n762|080|000/n103|900|000/n000|600|000</div>
+</div><!-- fragment --><p> The function board_to_array takes the string format of the <a class="el" href="namespace_sudoku.html">Sudoku</a> board and converts it to a 9x9 numpy array.</p>
+<p>The function array_to_board takes the 9x9 numpy array of the <a class="el" href="namespace_sudoku.html">Sudoku</a> board and converts it to a string format.</p>
+<dl class="section author"><dt>Author</dt><dd>Created by S.M. Daloglu: <a href="#" onclick="location.href='mai'+'lto:'+'smd'+'89'+'@ca'+'m.'+'ac.'+'uk'; return false;">smd89<span class="obfuscator">.nosp@m.</span>@cam<span class="obfuscator">.nosp@m.</span>.ac.u<span class="obfuscator">.nosp@m.</span>k</a> on 05/12/2023 </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

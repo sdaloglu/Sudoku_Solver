@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solver_20with_20backtracking_20algorithm_0',['Sudoku Solver with Backtracking Algorithm',['../index.html',1,'']]],
-  ['sudoku_20solver_20with_20backtracking_20algorithm_1',['Sudoku Solver with Backtracking Algorithm',['../index.html',1,'']]]
+  ['research_20computing_20coursework_20assignment_0',['C1: Research Computing - Coursework Assignment',['../index.html',1,'']]]
 ];

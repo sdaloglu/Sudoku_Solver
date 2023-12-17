@@ -4,15 +4,15 @@
 \begin{DoxyCompactItemize}
 \item
 bool \mbox{\hyperlink{namespacesolve__sudoku_acfab2484dd03f1e6a88322518fc6a9db}{solve\+\_\+sudoku}} (np.\+ndarray \mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Solves \doxylink{namespace_sudoku}{Sudoku} using the backtracking algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}} = sys.\+argv\mbox{[}1\mbox{]}
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}{f}} = open(\mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}}, "{}r"{})
+\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}}
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}} = f.\+read()
+\mbox{\hyperlink{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}{f}}
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}} = bd.\+board\+\_\+to\+\_\+array(\mbox{\hyperlink{namespacesolve__sudoku_a922aa896641778d6e331807728558231}{data}})
 \item
@@ -22,7 +22,13 @@ int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{c
 \item
 \mbox{\hyperlink{namespacesolve__sudoku_a451685229c9b66d6d124e863853c8fee}{board}} = bd.\+array\+\_\+to\+\_\+board(\mbox{\hyperlink{namespacesolve__sudoku_adb05a0546d163db06c3e69d5500687dc}{sudoku\+\_\+array}})
 \item
-\mbox{\hyperlink{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}{output}} = open("{}output.\+txt"{}, "{}x"{})
+\mbox{\hyperlink{namespacesolve__sudoku_a0b630b543cf595be14756536229ea07d}{input\+\_\+name}}
+\item
+\mbox{\hyperlink{namespacesolve__sudoku_ae203edb861b14f89d6e1f522b9f01ed7}{extension}}
+\item
+str \mbox{\hyperlink{namespacesolve__sudoku_a710ed60329e15d7c9fa4f32b6b04e15c}{output\+\_\+dir}} = "{}."{}
+\item
+str \mbox{\hyperlink{namespacesolve__sudoku_a4aed95cd4238adcf70590b4fdddff71c}{output\+\_\+name}} = \mbox{\hyperlink{namespacesolve__sudoku_a0b630b543cf595be14756536229ea07d}{input\+\_\+name}} + "{}\+\_\+solved.\+txt"{}
 \end{DoxyCompactItemize}
 
 
@@ -33,6 +39,20 @@ int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{c
 \doxysubsubsection{\texorpdfstring{solve\_sudoku()}{solve\_sudoku()}}
 {\footnotesize\ttfamily  bool solve\+\_\+sudoku.\+solve\+\_\+sudoku (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku\+\_\+array }\end{DoxyParamCaption})}
 
+
+
+Solves \doxylink{namespace_sudoku}{Sudoku} using the backtracking algorithm.
+
+Finds an empty cell in the sudoku board with the use of find\+\_\+empty function. Then places a guess in the empty cell and checks if the guess is valid using the check\+\_\+guess function. If the guess is valid, it is placed in the empty cell and the sudoku board is checked for completion. If the sudoku is not solved, the algorithm reverts back to the previous configuration of the \doxylink{namespace_sudoku}{Sudoku}. The algorithm is repeated recursively until the \doxylink{namespace_sudoku}{Sudoku} is solved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sudoku\+\_\+array} & \doxylink{namespace_sudoku}{Sudoku} to be solved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sudoku is solved, False if the sudoku is not solved.
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}
@@ -52,13 +72,19 @@ int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{c
 \index{solve\_sudoku@{solve\_sudoku}!data@{data}}
 \index{data@{data}!solve\_sudoku@{solve\_sudoku}}
 \doxysubsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+data = f.\+read()}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+data}
+
+\Hypertarget{namespacesolve__sudoku_ae203edb861b14f89d6e1f522b9f01ed7}\label{namespacesolve__sudoku_ae203edb861b14f89d6e1f522b9f01ed7}
+\index{solve\_sudoku@{solve\_sudoku}!extension@{extension}}
+\index{extension@{extension}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+extension}
 
 \Hypertarget{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}\label{namespacesolve__sudoku_a45f316e193a106b77583d5055678bd9b}
 \index{solve\_sudoku@{solve\_sudoku}!f@{f}}
 \index{f@{f}!solve\_sudoku@{solve\_sudoku}}
 \doxysubsubsection{\texorpdfstring{f}{f}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+f = open(\mbox{\hyperlink{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}{input\+\_\+file}}, "{}r"{})}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+f}
 
 \Hypertarget{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}\label{namespacesolve__sudoku_a987ffa69f05ddec45d41e8063203225f}
 \index{solve\_sudoku@{solve\_sudoku}!input\_file@{input\_file}}
@@ -66,11 +92,23 @@ int \mbox{\hyperlink{namespacesolve__sudoku_a02a48aad7bbea1304a4ba2cb99c09b53}{c
 \doxysubsubsection{\texorpdfstring{input\_file}{input\_file}}
 {\footnotesize\ttfamily solve\+\_\+sudoku.\+input\+\_\+file = sys.\+argv\mbox{[}1\mbox{]}}
 
-\Hypertarget{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}\label{namespacesolve__sudoku_aed323dbcf480f5d49183da6fa406f049}
-\index{solve\_sudoku@{solve\_sudoku}!output@{output}}
-\index{output@{output}!solve\_sudoku@{solve\_sudoku}}
-\doxysubsubsection{\texorpdfstring{output}{output}}
-{\footnotesize\ttfamily solve\+\_\+sudoku.\+output = open("{}output.\+txt"{}, "{}x"{})}
+\Hypertarget{namespacesolve__sudoku_a0b630b543cf595be14756536229ea07d}\label{namespacesolve__sudoku_a0b630b543cf595be14756536229ea07d}
+\index{solve\_sudoku@{solve\_sudoku}!input\_name@{input\_name}}
+\index{input\_name@{input\_name}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{input\_name}{input\_name}}
+{\footnotesize\ttfamily solve\+\_\+sudoku.\+input\+\_\+name}
+
+\Hypertarget{namespacesolve__sudoku_a710ed60329e15d7c9fa4f32b6b04e15c}\label{namespacesolve__sudoku_a710ed60329e15d7c9fa4f32b6b04e15c}
+\index{solve\_sudoku@{solve\_sudoku}!output\_dir@{output\_dir}}
+\index{output\_dir@{output\_dir}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{output\_dir}{output\_dir}}
+{\footnotesize\ttfamily str solve\+\_\+sudoku.\+output\+\_\+dir = "{}."{}}
+
+\Hypertarget{namespacesolve__sudoku_a4aed95cd4238adcf70590b4fdddff71c}\label{namespacesolve__sudoku_a4aed95cd4238adcf70590b4fdddff71c}
+\index{solve\_sudoku@{solve\_sudoku}!output\_name@{output\_name}}
+\index{output\_name@{output\_name}!solve\_sudoku@{solve\_sudoku}}
+\doxysubsubsection{\texorpdfstring{output\_name}{output\_name}}
+{\footnotesize\ttfamily str solve\+\_\+sudoku.\+output\+\_\+name = \mbox{\hyperlink{namespacesolve__sudoku_a0b630b543cf595be14756536229ea07d}{input\+\_\+name}} + "{}\+\_\+solved.\+txt"{}}
 
 \Hypertarget{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}\label{namespacesolve__sudoku_aa4a6644179c3d893ec5208ac9d4d1df9}
 \index{solve\_sudoku@{solve\_sudoku}!solved\_bool@{solved\_bool}}

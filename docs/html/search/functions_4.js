@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solve_5fsudoku_0',['solve_sudoku',['../namespacesolve__sudoku.html#acfab2484dd03f1e6a88322518fc6a9db',1,'solve_sudoku']]]
+  ['load_5ftxt_0',['load_txt',['../namespace_sudoku_1_1board.html#a5da5779ba0ef341549817db748fccc64',1,'Sudoku::board']]]
 ];

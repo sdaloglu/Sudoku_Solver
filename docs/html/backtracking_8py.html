@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Module containing functions for backtracking algorithm.
+<p>Module containing functions for the backtracking algorithm.
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -92,24 +92,28 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0d3251d0ea7cd30ac53d48bd400a2a06" id="r_a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#a0d3251d0ea7cd30ac53d48bd400a2a06">Sudoku.backtracking.check_validity</a> (np.ndarray sudoku, int guess, tuple position)</td></tr>
-<tr class="memdesc:a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the validity of the guess placed in the empty cell.  <br /></td></tr>
-<tr class="separator:a0d3251d0ea7cd30ac53d48bd400a2a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c912322af66999d1a33e7f0c2dd0f5b" id="r_a1c912322af66999d1a33e7f0c2dd0f5b"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#a1c912322af66999d1a33e7f0c2dd0f5b">Sudoku.backtracking.find_empty</a> (np.ndarray sudoku)</td></tr>
-<tr class="memdesc:a1c912322af66999d1a33e7f0c2dd0f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the next empty cell in the sudoku.  <br /></td></tr>
+<tr class="memdesc:a1c912322af66999d1a33e7f0c2dd0f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds an empty cell in the <a class="el" href="namespace_sudoku.html">Sudoku</a> board.  <br /></td></tr>
 <tr class="separator:a1c912322af66999d1a33e7f0c2dd0f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2792583cb13a43aba74d989b5c812689" id="r_a2792583cb13a43aba74d989b5c812689"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_sudoku_1_1backtracking.html#a2792583cb13a43aba74d989b5c812689">Sudoku.backtracking.check_guess</a> (np.ndarray sudoku, int guess, tuple position)</td></tr>
+<tr class="memdesc:a2792583cb13a43aba74d989b5c812689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the guess placed in the empty cell follows the <a class="el" href="namespace_sudoku.html">Sudoku</a> rules.  <br /></td></tr>
+<tr class="separator:a2792583cb13a43aba74d989b5c812689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Module containing functions for backtracking algorithm. </p>
-<p>This module contains functions for backtracking algorithm. Explain each function in detail here.</p>
-<h1><a class="anchor" id="autotoc_md0"></a>
+<div class="textblock"><p>Module containing functions for the backtracking algorithm. </p>
+<p>Functions include finding an empty cell in the <a class="el" href="namespace_sudoku.html">Sudoku</a> board and checking the validity of a guess placed in the empty cell.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Functions</h1>
-<p>check_validity Checks the validity of the guess placed in the empty cell.</p>
-<p>find_empty Finds the next empty cell in the sudoku.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
+find_empty</h2>
+<p>Finds an empty cell in the <a class="el" href="namespace_sudoku.html">Sudoku</a> board.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+check_guess</h2>
+<p>Checks if the guess placed in the empty cell follows the <a class="el" href="namespace_sudoku.html">Sudoku</a> rules.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Examples</h1>
-<p>Say how to use the function here.</p>
-<dl class="section author"><dt>Author</dt><dd>Created by S.M. Daloglu on 20/11/2023 </dd></dl>
+<p>A sudoku board can be solved using the backtracking algorithm as follows: First an empty cell is found using the find_empty function. An input 2d numpy array is required for this function. Then a guess is placed in the empty cell and the validity of the guess is checked using the check_guess function. If the guess is valid, the guess is placed in the empty cell and the sudoku board is checked for completion.</p>
+<dl class="section author"><dt>Author</dt><dd>Created by S.M. Daloglu: <a href="#" onclick="location.href='mai'+'lto:'+'smd'+'89'+'@ca'+'m.'+'ac.'+'uk'; return false;">smd89<span class="obfuscator">.nosp@m.</span>@cam<span class="obfuscator">.nosp@m.</span>.ac.u<span class="obfuscator">.nosp@m.</span>k</a> on 05/12/2023 </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['f_0',['f',['../namespacesolve__sudoku.html#a45f316e193a106b77583d5055678bd9b',1,'solve_sudoku']]],
-  ['find_5fempty_1',['find_empty',['../namespace_sudoku_1_1backtracking.html#a1c912322af66999d1a33e7f0c2dd0f5b',1,'Sudoku::backtracking']]],
-  ['functions_2',['Functions',['../backtracking_8py.html#autotoc_md0',1,'']]]
+  ['environment_0',['Environment',['../index.html#autotoc_md3',1,'']]],
+  ['examples_1',['examples',['../solve__sudoku_8py.html#autotoc_md10',1,'Examples'],['../backtracking_8py.html#autotoc_md14',1,'Examples'],['../board_8py.html#autotoc_md20',1,'Examples']]],
+  ['extension_2',['extension',['../namespacesolve__sudoku.html#ae203edb861b14f89d6e1f522b9f01ed7',1,'solve_sudoku']]]
 ];

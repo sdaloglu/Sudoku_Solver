@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['algorithm_0',['Sudoku Solver with Backtracking Algorithm',['../index.html',1,'']]]
+  ['assignment_0',['C1: Research Computing - Coursework Assignment',['../index.html',1,'']]]
 ];

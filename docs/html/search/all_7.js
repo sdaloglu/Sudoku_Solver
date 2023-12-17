@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output_0',['output',['../namespacesolve__sudoku.html#aed323dbcf480f5d49183da6fa406f049',1,'solve_sudoku']]]
+  ['generative_20a_20i_0',['The use of generative A.I.',['../index.html#autotoc_md7',1,'']]]
 ];

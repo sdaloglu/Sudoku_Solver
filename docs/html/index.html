@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sudoku Solver with Backtracking Algorithm: Sudoku Solver with Backtracking Algorithm</title>
+<title>Sudoku Solver with Backtracking Algorithm: C1: Research Computing - Coursework Assignment</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,21 +69,84 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title"><a class="el" href="namespace_sudoku.html">Sudoku</a> Solver with Backtracking Algorithm </div></div>
+  <div class="headertitle"><div class="title">C1: Research Computing - Coursework Assignment </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2_users_2mertdaloglu_2_desktop_2_course_work_2_r_c__coursework_2smd89_2_r_e_a_d_m_e"></a> Instructions for running the code:</p><ul>
-<li>Add pre-comit instructions - running &gt;pre-commit install explain continous integration and git hooks</li>
-<li>Add doxygen instructions (maybe?) - runing &gt;doxygen in the docs folder and openning index.html</li>
-</ul>
-<p>Instructions for running Docker:</p><ul>
-<li>from the directory Dockerfile is in, run:</li>
-</ul>
-<blockquote class="doxtable">
-<p>&zwj;docker build -t conda . docker run &ndash;rm -ti conda </p>
-</blockquote>
-<p>Instructions for running the code at root level directory:</p>
-<p>&gt;python <a class="el" href="solve__sudoku_8py.html" title="Main .py file for sudoku solving backtracking algorithm.">src/solve_sudoku.py</a> test_boards/input.txt </p>
+<div class="textblock"><p><a class="anchor" id="md__2_users_2mertdaloglu_2_desktop_2_course_work_2_r_c__coursework_2smd89_2_r_e_a_d_m_e"></a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Description</h1>
+<p>This project contains the code required to answer coursework questions for the Research Computing course. The goal of this project is to demonstrate a well-structured, modular software development of the backtracking algorithm for <a class="el" href="namespace_sudoku.html">Sudoku</a> solving. The advantages of the backtracking algorithm include a guaranteed solution for a valid <a class="el" href="namespace_sudoku.html">Sudoku</a> and a relatively straightforward code implementation. Although given enough time, the backtracking algorithm provides a solution to every <a class="el" href="namespace_sudoku.html">Sudoku</a> board, for the sake of simplicity the software for this coursework was designed to stop after 10<sup>6</sup> recursive iterations. An alternative algorithm is recommended for <a class="el" href="namespace_sudoku.html">Sudoku</a> boards that are designed to challenge the backtracking algorithm.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Problem Setting</h1>
+<p>The first step is to clone the remote GitLab repository on a local machine. This project does not provide an automated cloning command inside the <code>Dockerfile</code> to avoid authentication errors.</p>
+<p>To use the software, provide an input text file containing an incomplete 9x9 grid in the following form. The zeros representing unknown values and <code>|</code>,<code>+</code>,<code>-</code> separating cells. The text file should be placed in the <code>test_boards</code> directory, before running the software.</p>
+<div class="fragment"><div class="line">000|007|000</div>
+<div class="line">000|009|504</div>
+<div class="line">000|050|169</div>
+<div class="line">---+---+---</div>
+<div class="line">080|000|305</div>
+<div class="line">075|000|290</div>
+<div class="line">406|000|080</div>
+<div class="line">---+---+---</div>
+<div class="line">762|080|000</div>
+<div class="line">103|900|000</div>
+<div class="line">000|600|000</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Environment</h1>
+<p>This project can be easily run inside a Docker container specified with instructions listed inside the Dockerfile provided in the project. To build the docker image from the Dockerfile, run the following at the root directory of the project:</p>
+<div class="fragment"><div class="line">docker build -t rc .</div>
+</div><!-- fragment --><p>To create the container using the image:</p>
+<div class="fragment"><div class="line">docker run --rm -ti --name rc_container rc</div>
+</div><!-- fragment --><p>This will create a linux machine with the required conda environment named <code>rc</code> activated and a bash terminal open to run the commands below. All the required files inside the project in order to run the software, assuming a local copy was made previously, are copied inside the container ready to be used.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Running the main algorithm</h1>
+<p>The main <a class="el" href="namespace_sudoku.html">Sudoku</a> solving algorithm is located inside the <code><a class="el" href="solve__sudoku_8py.html" title="Main Python script for the Sudoku solving algorithm.">solve_sudoku.py</a></code> script. The two ways to run the main function inside the container are given below:</p>
+<div class="fragment"><div class="line">python src/solve_sudoku.py test_boards/input.txt</div>
+</div><!-- fragment --><p> This command should be run from the root directory. The solution to the <a class="el" href="namespace_sudoku.html">Sudoku</a> board inside the <code>input.txt</code> file is output on the terminal. The solution is also saved as a text file named <code>$input_file_name$_solved.txt</code>.</p>
+<div class="fragment"><div class="line">python ../src/solve_sudoku.py input.txt</div>
+</div><!-- fragment --><p> An alternative way to run the main algorithm is from the <code>test_boards</code> directory. Regardless of the choice, the output text file is always saved inside the directory where the input text file is located. One should make sure to place the input text file inside the <code>test_boards</code> directory before running the software.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Documentation</h1>
+<p>The documentation of this project can be obtained by running the following command on the terminal inside the <code>docs</code> directory</p>
+<div class="fragment"><div class="line">doxygen</div>
+</div><!-- fragment --><p> This command builds the documentation for the project in <code>html</code> and <code>latex</code> formats. Inside the <code>html</code> directory, <code>index.html</code> file can be referenced for the documentation.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Copying files from the container to the local</h1>
+<p>Files inside the container such as documentation, or solution text files can be transferred to the local filesystem. An example of copying the files inside <code>test_boards</code> directory containing the input <a class="el" href="namespace_sudoku.html">Sudoku</a> boards and their corresponding solutions is shown below. This command should be run on the local terminal.</p>
+<div class="fragment"><div class="line">docker cp rc_container:/app/test_boards/. ../</div>
+</div><!-- fragment --><p> <code>rc_container</code> should match the name of the container. <code>../</code> is the path to the local destination.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+The use of generative A.I.</h1>
+<p>Generative AI was used during the process of making <a class="el" href="namespace_sudoku.html">Sudoku</a> test boards for the validation section. The prompt submitted to ChatGPT 3.5 is given below:</p>
+<div class="fragment"><div class="line">Can you generate 10 test sudoku boards as a text file in the following format?</div>
+<div class="line"> </div>
+<div class="line">000|007|000</div>
+<div class="line">000|009|504</div>
+<div class="line">000|050|169</div>
+<div class="line">---+---+---</div>
+<div class="line">080|000|305</div>
+<div class="line">075|000|290</div>
+<div class="line">406|000|080</div>
+<div class="line">---+---+---</div>
+<div class="line">762|080|000</div>
+<div class="line">103|900|000</div>
+<div class="line">000|600|000</div>
+<div class="line"> </div>
+<div class="line">Where 0&#39;s represent empty cells.</div>
+</div><!-- fragment --><div class="fragment"><div class="line">Generate 5 more test sudoku boards in the same format but this time increase the difficulty of Sudokus, and make them harder especially for a solver using the backtracking algorithm.</div>
+</div><!-- fragment --><p> ChatGPT was also used for suggesting alternative wordings and grammar suggestions while writing the report. The following prompts were used during this process</p>
+<div class="fragment"><div class="line">What is another word for &lt;input word&gt;?</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">Is this sentence grammatically correct? &lt;input sentence&gt;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">Is this paragraph clear for a reader? &lt;input paragraph&gt;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">How to rephrase this sentence to make it more clear? &lt;input sentence&gt;</div>
+</div><!-- fragment --><p> The outputs were partially adapted in a way that only alternative wordings were used and not the whole output while rephrasing the Introduction and Summary parts of the report.</p>
+<p>Furthermore, the suggestions from the autocomplete feature of <code>GitHub Copilot</code> were utilized during the documentation of the unit testing functions, and code development of the project.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Authors</h1>
+<p>Sabahattin Mert Daloglu</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+License</h1>
+<p>This project is licensed under the BSD-3-Clause License - see the [LICENSE](LICENSE) for details. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

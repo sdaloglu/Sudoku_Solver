@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['backtracking_20algorithm_0',['Sudoku Solver with Backtracking Algorithm',['../index.html',1,'']]],
-  ['backtracking_2epy_1',['backtracking.py',['../backtracking_8py.html',1,'']]],
-  ['board_2',['board',['../namespacesolve__sudoku.html#a451685229c9b66d6d124e863853c8fee',1,'solve_sudoku']]],
-  ['board_2epy_3',['board.py',['../board_8py.html',1,'']]],
-  ['board_5fto_5farray_4',['board_to_array',['../namespace_sudoku_1_1board.html#afe5b2328754ef2348f7d4aab1955672b',1,'Sudoku::board']]]
+  ['a_20i_0',['The use of generative A.I.',['../index.html#autotoc_md7',1,'']]],
+  ['algorithm_1',['Running the main algorithm',['../index.html#autotoc_md4',1,'']]],
+  ['array_5fto_5fboard_2',['array_to_board',['../namespace_sudoku_1_1board.html#a9ab63272b1ebd74c47659de2f72bb388',1,'Sudoku.board.array_to_board()'],['../board_8py.html#autotoc_md19',1,'array_to_board']]],
+  ['assignment_3',['C1: Research Computing - Coursework Assignment',['../index.html',1,'']]],
+  ['authors_4',['Authors',['../index.html#autotoc_md8',1,'']]]
 ];

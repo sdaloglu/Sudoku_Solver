@@ -3,50 +3,90 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item
-np.\+ndarray \mbox{\hyperlink{namespace_sudoku_1_1board_afe5b2328754ef2348f7d4aab1955672b}{board\+\_\+to\+\_\+array}} (board)
-\begin{DoxyCompactList}\small\item\em Converts .txt file of a sudoku board to 9x9 numpy array. \end{DoxyCompactList}\item
-\mbox{\hyperlink{namespace_sudoku_1_1board_a5a25114c992688c398d8fcb0053532d7}{array\+\_\+to\+\_\+board}} (np.\+ndarray sudoku\+\_\+array)
-\begin{DoxyCompactList}\small\item\em Converts 9x9 numpy array to .txt file of a sudoku board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+str \mbox{\hyperlink{namespace_sudoku_1_1board_a5da5779ba0ef341549817db748fccc64}{load\+\_\+txt}} (input\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Loads the input text file. \end{DoxyCompactList}\item
+bool \mbox{\hyperlink{namespace_sudoku_1_1board_a204eb372c90b94983360cb436126b9d9}{check\+\_\+board}} (np.\+ndarray board)
+\begin{DoxyCompactList}\small\item\em Checks if the input board is a valid sudoku board. \end{DoxyCompactList}\item
+np.\+ndarray \mbox{\hyperlink{namespace_sudoku_1_1board_a39fbc8504c5b0a0dbcead8c92b8c8474}{board\+\_\+to\+\_\+array}} (str board)
+\begin{DoxyCompactList}\small\item\em Converts the \doxylink{namespace_sudoku}{Sudoku} board from string type to 9x9 numpy array. \end{DoxyCompactList}\item
+str \mbox{\hyperlink{namespace_sudoku_1_1board_a9ab63272b1ebd74c47659de2f72bb388}{array\+\_\+to\+\_\+board}} (np.\+ndarray sudoku\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Converts a 9x9 numpy array to string of a \doxylink{namespace_sudoku}{Sudoku} board. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{namespace_sudoku_1_1board_a5a25114c992688c398d8fcb0053532d7}\label{namespace_sudoku_1_1board_a5a25114c992688c398d8fcb0053532d7}
+\Hypertarget{namespace_sudoku_1_1board_a9ab63272b1ebd74c47659de2f72bb388}\label{namespace_sudoku_1_1board_a9ab63272b1ebd74c47659de2f72bb388}
 \index{Sudoku.board@{Sudoku.board}!array\_to\_board@{array\_to\_board}}
 \index{array\_to\_board@{array\_to\_board}!Sudoku.board@{Sudoku.board}}
 \doxysubsubsection{\texorpdfstring{array\_to\_board()}{array\_to\_board()}}
-{\footnotesize\ttfamily Sudoku.\+board.\+array\+\_\+to\+\_\+board (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku\+\_\+array }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  str Sudoku.\+board.\+array\+\_\+to\+\_\+board (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{sudoku\+\_\+array }\end{DoxyParamCaption})}
 
 
 
-Converts 9x9 numpy array to .txt file of a sudoku board.
-
-This function converts 9x9 numpy array to .txt file of a sudoku board \doxylink{namespace_sudoku}{Sudoku} board represented as a .txt file such as\+: 000\texorpdfstring{$\vert$}{|}007\texorpdfstring{$\vert$}{|}000 000\texorpdfstring{$\vert$}{|}009\texorpdfstring{$\vert$}{|}504 000\texorpdfstring{$\vert$}{|}050\texorpdfstring{$\vert$}{|}169 ---+---+--- 080\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}305 075\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}290 406\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}080 ---+---+--- 762\texorpdfstring{$\vert$}{|}080\texorpdfstring{$\vert$}{|}000 103\texorpdfstring{$\vert$}{|}900\texorpdfstring{$\vert$}{|}000 000\texorpdfstring{$\vert$}{|}600\texorpdfstring{$\vert$}{|}000
+Converts a 9x9 numpy array to string of a \doxylink{namespace_sudoku}{Sudoku} board.
 
 
 \begin{DoxyParams}{Parameters}
-{\em sudoku\+\_\+array} & 9x9 numpy array \doxylink{namespace_sudoku}{Sudoku} board represented as a 9x9 numpy array\\
+{\em board} & Solved \doxylink{namespace_sudoku}{Sudoku} board as a 9x9 numpy array\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-.txt file of a sudoku board
+Solved \doxylink{namespace_sudoku}{Sudoku} board as a string
 \end{DoxyReturn}
-\Hypertarget{namespace_sudoku_1_1board_afe5b2328754ef2348f7d4aab1955672b}\label{namespace_sudoku_1_1board_afe5b2328754ef2348f7d4aab1955672b}
+\Hypertarget{namespace_sudoku_1_1board_a39fbc8504c5b0a0dbcead8c92b8c8474}\label{namespace_sudoku_1_1board_a39fbc8504c5b0a0dbcead8c92b8c8474}
 \index{Sudoku.board@{Sudoku.board}!board\_to\_array@{board\_to\_array}}
 \index{board\_to\_array@{board\_to\_array}!Sudoku.board@{Sudoku.board}}
 \doxysubsubsection{\texorpdfstring{board\_to\_array()}{board\_to\_array()}}
-{\footnotesize\ttfamily  np.\+ndarray Sudoku.\+board.\+board\+\_\+to\+\_\+array (\begin{DoxyParamCaption}\item[{}]{board }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  np.\+ndarray Sudoku.\+board.\+board\+\_\+to\+\_\+array (\begin{DoxyParamCaption}\item[{str}]{board }\end{DoxyParamCaption})}
 
 
 
-Converts .txt file of a sudoku board to 9x9 numpy array.
-
-This function converts .txt file of a sudoku board to 9x9 numpy array
+Converts the \doxylink{namespace_sudoku}{Sudoku} board from string type to 9x9 numpy array.
 
 
 \begin{DoxyParams}{Parameters}
-{\em board} & string \doxylink{namespace_sudoku}{Sudoku} to be solved in string format\\
+{\em board} & \doxylink{namespace_sudoku}{Sudoku} to be solved in string format\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-9x9 numpy array Explain parameter
+\doxylink{namespace_sudoku}{Sudoku} to be solved as a 9x9 numpy array
+\end{DoxyReturn}
+\Hypertarget{namespace_sudoku_1_1board_a204eb372c90b94983360cb436126b9d9}\label{namespace_sudoku_1_1board_a204eb372c90b94983360cb436126b9d9}
+\index{Sudoku.board@{Sudoku.board}!check\_board@{check\_board}}
+\index{check\_board@{check\_board}!Sudoku.board@{Sudoku.board}}
+\doxysubsubsection{\texorpdfstring{check\_board()}{check\_board()}}
+{\footnotesize\ttfamily  bool Sudoku.\+board.\+check\+\_\+board (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{board }\end{DoxyParamCaption})}
+
+
+
+Checks if the input board is a valid sudoku board.
+
+This function checks if the input board is a valid sudoku board according to the \doxylink{namespace_sudoku}{Sudoku} rules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Input \doxylink{namespace_sudoku}{Sudoku} board to be checked for validity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the board is valid, False if the board is invalid
+\end{DoxyReturn}
+\Hypertarget{namespace_sudoku_1_1board_a5da5779ba0ef341549817db748fccc64}\label{namespace_sudoku_1_1board_a5da5779ba0ef341549817db748fccc64}
+\index{Sudoku.board@{Sudoku.board}!load\_txt@{load\_txt}}
+\index{load\_txt@{load\_txt}!Sudoku.board@{Sudoku.board}}
+\doxysubsubsection{\texorpdfstring{load\_txt()}{load\_txt()}}
+{\footnotesize\ttfamily  str Sudoku.\+board.\+load\+\_\+txt (\begin{DoxyParamCaption}\item[{}]{input\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Loads the input text file.
+
+An input text file containing the \doxylink{namespace_sudoku}{Sudoku} board is loaded into a string. Any possible errors while opening input file are trapped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & Input text file containing the \doxylink{namespace_sudoku}{Sudoku} board\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_sudoku}{Sudoku} board as a string
 \end{DoxyReturn}

@@ -2,7 +2,7 @@
 \hypertarget{board_8py}{}\label{board_8py}\index{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/Sudoku/board.py@{/Users/mertdaloglu/Desktop/CourseWork/RC\_coursework/smd89/src/Sudoku/board.py}}
 
 
-Module containing functions for building a visual board in .txt format form numpy array or vise verca.
+Module containing functions for the \doxylink{namespace_sudoku}{Sudoku} board manipulation and data parsing.
 
 
 \doxysubsubsection*{Namespaces}
@@ -15,28 +15,51 @@ namespace \mbox{\hyperlink{namespace_sudoku_1_1board}{Sudoku.\+board}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item
-np.\+ndarray \mbox{\hyperlink{namespace_sudoku_1_1board_afe5b2328754ef2348f7d4aab1955672b}{Sudoku.\+board.\+board\+\_\+to\+\_\+array}} (board)
-\begin{DoxyCompactList}\small\item\em Converts .txt file of a sudoku board to 9x9 numpy array. \end{DoxyCompactList}\item
-\mbox{\hyperlink{namespace_sudoku_1_1board_a5a25114c992688c398d8fcb0053532d7}{Sudoku.\+board.\+array\+\_\+to\+\_\+board}} (np.\+ndarray sudoku\+\_\+array)
-\begin{DoxyCompactList}\small\item\em Converts 9x9 numpy array to .txt file of a sudoku board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+str \mbox{\hyperlink{namespace_sudoku_1_1board_a5da5779ba0ef341549817db748fccc64}{Sudoku.\+board.\+load\+\_\+txt}} (input\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Loads the input text file. \end{DoxyCompactList}\item
+bool \mbox{\hyperlink{namespace_sudoku_1_1board_a204eb372c90b94983360cb436126b9d9}{Sudoku.\+board.\+check\+\_\+board}} (np.\+ndarray board)
+\begin{DoxyCompactList}\small\item\em Checks if the input board is a valid sudoku board. \end{DoxyCompactList}\item
+np.\+ndarray \mbox{\hyperlink{namespace_sudoku_1_1board_a39fbc8504c5b0a0dbcead8c92b8c8474}{Sudoku.\+board.\+board\+\_\+to\+\_\+array}} (str board)
+\begin{DoxyCompactList}\small\item\em Converts the \doxylink{namespace_sudoku}{Sudoku} board from string type to 9x9 numpy array. \end{DoxyCompactList}\item
+str \mbox{\hyperlink{namespace_sudoku_1_1board_a9ab63272b1ebd74c47659de2f72bb388}{Sudoku.\+board.\+array\+\_\+to\+\_\+board}} (np.\+ndarray sudoku\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Converts a 9x9 numpy array to string of a \doxylink{namespace_sudoku}{Sudoku} board. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Module containing functions for building a visual board in .txt format form numpy array or vise verca.
+Module containing functions for the \doxylink{namespace_sudoku}{Sudoku} board manipulation and data parsing.
 
-This module contains functions for building a visual board in .txt format form numpy array or vise verca.
+Functions include transforming the sudoku board from numpy array to string and vice versa. Loading the the input text file containing the \doxylink{namespace_sudoku}{Sudoku} board and converting it to a string. Checking if the input \doxylink{namespace_sudoku}{Sudoku} board is valid according to the \doxylink{namespace_sudoku}{Sudoku} rules.\hypertarget{board_8py_autotoc_md15}{}\doxysubsection{\texorpdfstring{Functions}{Functions}}\label{board_8py_autotoc_md15}
+\hypertarget{board_8py_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{load\+\_\+txt}{load\_txt}}\label{board_8py_autotoc_md16}
+Loads the input text file into a string \hypertarget{board_8py_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{check\+\_\+board}{check\_board}}\label{board_8py_autotoc_md17}
+Checks if the input board is a valid \doxylink{namespace_sudoku}{Sudoku} board \hypertarget{board_8py_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{board\+\_\+to\+\_\+array}{board\_to\_array}}\label{board_8py_autotoc_md18}
+Converts the \doxylink{namespace_sudoku}{Sudoku} board from string type to 9x9 numpy array \hypertarget{board_8py_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{array\+\_\+to\+\_\+board}{array\_to\_board}}\label{board_8py_autotoc_md19}
+Converts 9x9 numpy array to string of a \doxylink{namespace_sudoku}{Sudoku} board\hypertarget{board_8py_autotoc_md20}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{board_8py_autotoc_md20}
+The function load\+\_\+txt loads an input .txt file in the following form\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{000|007|000}
+\DoxyCodeLine{000|009|504}
+\DoxyCodeLine{000|050|169}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{080|000|305}
+\DoxyCodeLine{075|000|290}
+\DoxyCodeLine{406|000|080}
+\DoxyCodeLine{-\/-\/-\/+-\/-\/-\/+-\/-\/-\/}
+\DoxyCodeLine{762|080|000}
+\DoxyCodeLine{103|900|000}
+\DoxyCodeLine{000|600|000}
 
-This Module contains functions .... to create ...\hypertarget{board_8py_autotoc_md2}{}\doxysubsection{\texorpdfstring{Contains}{Contains}}\label{board_8py_autotoc_md2}
-board\+\_\+to\+\_\+array What the function does array\+\_\+to\+\_\+board What the function does
+\end{DoxyCode}
 
-The function board\+\_\+to\+\_\+array takes a .txt file such as\+:
 
-000\texorpdfstring{$\vert$}{|}007\texorpdfstring{$\vert$}{|}000 000\texorpdfstring{$\vert$}{|}009\texorpdfstring{$\vert$}{|}504 000\texorpdfstring{$\vert$}{|}050\texorpdfstring{$\vert$}{|}169 ---+---+--- 080\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}305 075\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}290 406\texorpdfstring{$\vert$}{|}000\texorpdfstring{$\vert$}{|}080 ---+---+--- 762\texorpdfstring{$\vert$}{|}080\texorpdfstring{$\vert$}{|}000 103\texorpdfstring{$\vert$}{|}900\texorpdfstring{$\vert$}{|}000 000\texorpdfstring{$\vert$}{|}600\texorpdfstring{$\vert$}{|}000
+and convert it into a string format as follows\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{000|007|000/n000|009|504/n000|050|169/n-\/-\/-\/+-\/-\/-\/+-\/-\/-\//n080|000|305/n075|000|290/n406|000|080/n-\/-\/-\/+-\/-\/-\/+-\/-\/-\//n762|080|000/n103|900|000/n000|600|000}
 
-and converts it to a 9x9 numpy array in the form of\+:
+\end{DoxyCode}
+ The function board\+\_\+to\+\_\+array takes the string format of the \doxylink{namespace_sudoku}{Sudoku} board and converts it to a 9x9 numpy array.
 
-\mbox{[}\mbox{[}0,0,0,0,0,7,0,0,0\mbox{]},\mbox{[}0,0,0,0,0,9,5,0,4\mbox{]},\mbox{[}0,0,0,0,5,0,1,6,9\mbox{]},\mbox{[}0,8,0,0,0,0,3,0,5\mbox{]},\mbox{[}0,7,5,0,0,0,2,9,0\mbox{]},\mbox{[}4,0,6,0,0,0,0,8,0\mbox{]},\mbox{[}7,6,2,0,8,0,0,0,0\mbox{]},\mbox{[}1,0,3,9,0,0,0,0,0\mbox{]},\mbox{[}0,0,0,6,0,0,0,0,0\mbox{]}\mbox{]}
+The function array\+\_\+to\+\_\+board takes the 9x9 numpy array of the \doxylink{namespace_sudoku}{Sudoku} board and converts it to a string format.
 
 \begin{DoxyAuthor}{Author}
-Created by S.\+M. Daloglu on 20/11/2023
+Created by S.\+M. Daloglu\+: \href{mailto:smd89@cam.ac.uk}{\texttt{ smd89@cam.\+ac.\+uk}} on 05/12/2023
 \end{DoxyAuthor}
