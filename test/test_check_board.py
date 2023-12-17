@@ -1,14 +1,27 @@
+"""!@file test_check_board.py
+@brief Test function to check the functionality of the check_board function in the board module.
+@details This function tests the behavior of the check_board function in the board.py module.
+    It creates two test sudoku arrays, one valid and one invalid.
+    Then, it checks if the check_board function correctly identifies test boards that follow the Sudoku rules,
+    which prohibit repeating numbers in rows, columns, or 3x3 boxes.
+    This test is successful if the check_board function returns True for the valid board and False for the invalid board.
+
+
+@author Created by S.M. Daloglu: smd89@cam.ac.uk on 05/12/2023
+"""
+
+
 import numpy as np
 from src.sudoku.board import check_board
 
 
 def test_check_board():
-    """
-    Test for check_board function in board.py
-
-    This function tests the behavior of the check_board function in the board.py module.
+    """!@brief Test for check_board function in board module
+    @details This function tests the behavior of the check_board function in the board.py module.
     It creates two test sudoku arrays, one valid and one invalid.
-    It then asserts the expected results of calling the check_board function on these arrays.
+    Then, it checks if the check_board function correctly identifies test boards that follow the Sudoku rules,
+    which prohibit repeating numbers in rows, columns, or 3x3 boxes.
+    This test is successful if the check_board function returns True for the valid board and False for the invalid board.
 
     """
 
