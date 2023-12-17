@@ -1,24 +1,26 @@
 """!@file board.py
-@brief Module containing functions for sudoku board manipulation.
-
-the input text file and transforming the sudoku board between numpy array to .txt file.
-
+@brief Module containing functions for the Sudoku board manipulation and data parsing.
 @details Functions include transforming the sudoku board from numpy array to string and vice versa.
-Loading the the input text file containing the sudoku board and converting it to a string.
-
-in .txt format form numpy array or vise verca.
-
-This Module contains functions .... to create ...
-
-# Contains
-    board_to_array
-        What the function does
-    array_to_board
-        What the function does
+Loading the the input text file containing the Sudoku board and converting it to a string.
+Checking if the input Sudoku board is valid according to the Sudoku rules.
 
 
-The function board_to_array takes a .txt file such as:
 
+# Functions
+
+## load_txt
+    Loads the input text file into a string
+## check_board
+    Checks if the input board is a valid Sudoku board
+## board_to_array
+    Converts the Sudoku board from string type to 9x9 numpy array
+## array_to_board
+    Converts 9x9 numpy array to string of a Sudoku board
+
+
+# Examples
+The function load_txt loads an input .txt file in the following form:
+```
 000|007|000
 000|009|504
 000|050|169
@@ -30,12 +32,18 @@ The function board_to_array takes a .txt file such as:
 762|080|000
 103|900|000
 000|600|000
+```
 
-and converts it to a 9x9 numpy array in the form of:
+and convert it into a string format as follows:
+```
+000|007|000/n000|009|504/n000|050|169/n---+---+---/n080|000|305/n075|000|290/n406|000|080/n---+---+---/n762|080|000/n103|900|000/n000|600|000
+```
+The function board_to_array takes the string format of the Sudoku board and converts it to a 9x9 numpy array.
 
-[[0,0,0,0,0,7,0,0,0],[0,0,0,0,0,9,5,0,4],[0,0,0,0,5,0,1,6,9],[0,8,0,0,0,0,3,0,5],[0,7,5,0,0,0,2,9,0],[4,0,6,0,0,0,0,8,0],[7,6,2,0,8,0,0,0,0],[1,0,3,9,0,0,0,0,0],[0,0,0,6,0,0,0,0,0]]
+The function array_to_board takes the 9x9 numpy array of the Sudoku board and converts it to a string format.
 
-@author Created by S.M. Daloglu on 20/11/2023
+
+@author Created by S.M. Daloglu: smd89@cam.ac.uk on 05/12/2023
 """
 
 # Load Modules:
@@ -45,11 +53,12 @@ import sys
 
 def load_txt(input_file) -> str:
     """!@brief Loads the input text file
+    @details An input text file containing the Sudoku board is loaded into a string.
+    Any possible errors while opening input file are trapped.
 
-    @details This function loads the input text file from the command line
-    and reads the text file into a string
+    @param input_file: Input text file containing the Sudoku board
 
-    @return
+    @return Sudoku board as a string
     """
 
     # Trapping files that can not be opened
@@ -67,7 +76,8 @@ def load_txt(input_file) -> str:
 
 
 def check_board(board: np.ndarray) -> bool:
-    """!@brief Checking if the input board is a valid sudoku board
+    """!@brief Checks if the input board is a valid sudoku board
+    @details This function checks if the input board is a valid sudoku board according to the Sudoku rules.
 
     @param board: Input Sudoku board to be checked for validity
 
@@ -114,17 +124,14 @@ def check_board(board: np.ndarray) -> bool:
 
 
 def board_to_array(board: str) -> np.ndarray:
-    """!@brief Converts sudoku board from string type to 9x9 numpy array
-
-    @details This function converts .txt file of a sudoku board to 9x9 numpy array
-
+    """!@brief Converts the Sudoku board from string type to 9x9 numpy array
     @param board: Sudoku to be solved in string format
-
 
     @return Sudoku to be solved as a 9x9 numpy array
 
 
     """
+
     # Creating the outer array of the 2D sudoku which will store 9 row (inner)arrays
     data_array = np.array([])
 
@@ -166,27 +173,10 @@ def board_to_array(board: str) -> np.ndarray:
 
 
 def array_to_board(sudoku_array: np.ndarray) -> str:
-    """!@brief Converts 9x9 numpy array to string of a sudoku board
+    """!@brief Converts a 9x9 numpy array to string of a Sudoku board
+    @param board: Solved Sudoku board as a 9x9 numpy array
 
-    @details This function converts 9x9 numpy array to .txt file of a sudoku board
-     Sudoku board represented as a .txt file such as:
-        000|007|000
-        000|009|504
-        000|050|169
-        ---+---+---
-        080|000|305
-        075|000|290
-        406|000|080
-        ---+---+---
-        762|080|000
-        103|900|000
-        000|600|000
-
-    @param sudoku_array: 9x9 numpy array
-        Sudoku board represented as a 9x9 numpy array
-
-    @return string file of a sudoku board
-
+    @return Solved Sudoku board as a string
 
     """
 
@@ -203,12 +193,13 @@ def array_to_board(sudoku_array: np.ndarray) -> str:
     for i in range(11, 109, 12):
         sudoku_array = np.insert(sudoku_array, i, "\n")
 
-    # Adding spaces between 3 rows
+    # Adding vertical spaces between 3 rows
     for i in range(36, 109, 37):
         sudoku_array = np.insert(sudoku_array, i, "\n\n")
 
     board = "".join(sudoku_array)
 
+    # Adding the separation lines between every 3 rows
     inline = "---+---+---"
     board = board[:36] + inline + board[36:73] + inline + board[73:]
 
