@@ -1,9 +1,19 @@
 """!@file solve_sudoku.py
-@brief Main .py file for sudoku solving backtracking algorithm.
+@brief Main Python script for the Sudoku solving algorithm.
 
-@details Backtracking algorithm is a brute force method which tries
-    all possible values for the empty cells until it finds the correct one. The algorithm reverts back to the previous configuration of the sudoku
-    table as soon as a contradiction is found with the current configuration.
+@details This script takes a text file containing a Sudoku board as an input and outputs the solution to another text file named "input_file_name"_solved.txt.
+A recursive backtracking algorithm is used to solve the Sudoku board.
+The backtracking algorithm is a brute force method which tries
+all possible values for the empty cells until it finds the correct one.
+The algorithm reverts back to the previous configuration of the sudoku
+table as soon as a contradiction is found with the current configuration.
+
+# Examples
+```
+python src/solve_sudoku.py test_board/test_board_1.txt
+```
+
+
 @author Created by S.M. Daloglu: smd89@cam.ac.uk on 05/12/2023
 """
 
@@ -32,15 +42,16 @@ count = 0
 
 
 def solve_sudoku(sudoku_array: np.ndarray) -> bool:
-    """!@brief Solves the sudoku using backtracking algorithm.
-
-    @details This function solves the sudoku using backtracking algorithm.
-
+    """!@brief Solves Sudoku using the backtracking algorithm.
+    @details Finds an empty cell in the sudoku board with the use of find_empty function.
+    Then places a guess in the empty cell and checks if the guess is valid using the check_guess function.
+    If the guess is valid, it is placed in the empty cell and the sudoku board is checked for completion.
+    If the sudoku is not solved, the algorithm reverts back to the previous configuration of the Sudoku.
+    The algorithm is repeated recursively until the Sudoku is solved.
 
     @param sudoku_array: Sudoku to be solved.
 
     @return True if the sudoku is solved, False if the sudoku is not solved.
-
     """
 
     global count
@@ -62,8 +73,10 @@ def solve_sudoku(sudoku_array: np.ndarray) -> bool:
         empty_cell = bt.find_empty(sudoku_array)
 
     for guess in range(1, 10):
+        # Make a guess and check if it is valid
         valid = bt.check_guess(sudoku_array, guess, empty_cell)
         if valid:
+            # Assign the guess to the empty cell
             sudoku_array[empty_cell[0], empty_cell[1]] = guess
 
             # Recursive call to solve_sudoku function
@@ -92,11 +105,13 @@ elif solved_bool is True:
     # Split the input filename into file name and extension
     input_name, extension = os.path.splitext(input_file)
 
-    # Already in the test_board directory when running the script
+    # Script can be run both in the test_boards directory or the root directory.
+    # Either way since the input_name includes the path to the input file,
+    # the output file will be saved in the same directory as the input_file
     output_dir = "."
     output_name = input_name + "_solved.txt"
 
-    # Save the solution to the output file inside the test_board directory
+    # Save the solution to the output file in the same directory as the input file
     with open(os.path.join(output_dir, output_name), "w") as file:
         file.write(board)
 
